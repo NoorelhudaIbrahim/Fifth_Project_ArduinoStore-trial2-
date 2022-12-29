@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elegant Dashboard | Sign In</title>
   <!-- Favicon -->
-  <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="dashboard/img/svg/logo.svg" type="image/x-icon">
   <!-- Custom styles -->
-  <link rel="stylesheet" href="./dashboard/css/style.dashboard.min.css">
+  <link rel="stylesheet" href="dashboard/css/style.dashboard.min.css">
 </head>
 
 <body>
@@ -37,11 +37,11 @@
   </article>
 </main>
 <!-- Chart library -->
-<script src="./plugins/chart.min.js"></script>
+<script src="dashboard/plugins/chart.min.js"></script>
 <!-- Icons library -->
-<script src="plugins/feather.min.js"></script>
+<script src="dashboard/plugins/feather.min.js"></script>
 <!-- Custom scripts -->
-<script src="js/script.js"></script>
+<script src="dashboard/js/script.js"></script>
 </body>
 
 </html>
