@@ -52,6 +52,18 @@
                         <li class="nav-item">
                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
+
+                        <li class="nav-item">
+                           <a class="nav-link" href="Login.html">Log in</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                           <a class="nav-link" href="Singup.html">Singup</a>
+                        </li>
+
+
+
+
                         <li class="nav-item">
                            <a class="nav-link" href="#">
                               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -121,10 +133,10 @@
          <!-- end header section -->
          <!-- slider section -->
          <section class="slider_section ">
-
+         
             <div class="slider_bg_box">
-               <img src="images/landing.webm" alt="">  
-               <iframe src="./images/" frameborder="0"></iframe>
+               <video src="./images/Landing.webm" autoplay loop type="video/mp4"></video>  
+               <!-- <iframe src="./images/" frameborder="0"></iframe> -->
          
             </div>
 
