@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2022 at 09:26 AM
+-- Generation Time: Dec 31, 2022 at 04:16 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -29,11 +29,40 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
-  `image` varchar(300) NOT NULL,
   `name` varchar(20) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
+  `description` mediumtext NOT NULL,
+  `create_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `update_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`category_id`, `name`, `description`, `create_at`, `update_at`) VALUES
+(4, 'اثممخ', 'Kits are a great way to get started with Arduino. The classic Starter Kit includes an Arduino UNO, a large set of electronic components, and a physical book with 15 chapters to help you get started.\r\n\r\nThe Oplà IoT Kit includes the components needed to build amazing IoT projects, and the Sensor Kit includes a set of great plug-and-play sensors and actuators. These kits also have their own dedicated content platform, with several cool projects to follow step by step.', '2022-12-31 07:31:20', '2022-12-31 10:31:20'),
+(6, 'Nano Family', 'The Nano Family is a set of boards with a tiny footprint, packed with features. It ranges from the inexpensive, basic Nano Every, to the more feature-packed Nano 33 BLE Sense / Nano RP2040 Connect that has Bluetooth® / Wi-Fi radio modules. These boards also have a set of embedded sensors, such as temperature/humidity, pressure, gesture, microphone and more. They can also be programmed with MicroPython and supports Machine Learning.', '2022-12-31 07:36:22', '2022-12-31 10:36:22'),
+(7, 'MKR Family', 'The MKR Family is a series of boards, shields & carriers that can be combined to create amazing projects without any additional circuitry. Each board is equipped with a radio module (except MKR Zero), that enables Wi-Fi, Bluetooth®, LoRa®, Sigfox, NB-IoT communication. All boards in the family are based on the Cortex-M0 32-bit SAMD21 low power processor, and are equipped with a crypto chip for secure communication.\r\n\r\nThe MKR Family shields & carriers are designed to extend the functions of the board: such as environmental sensors, GPS, Ethernet, motor control and RGB matrix.', '2022-12-31 07:37:18', '2022-12-31 10:37:18'),
+(8, 'Classic Family', 'n the Classic Family, you will find boards such as the legendary Arduino UNO and other classics such as the Leonardo & Micro. These boards are considered the backbone of the Arduino project, and has been a success for many years (and more to come).', '2022-12-31 07:37:41', '2022-12-31 10:37:41'),
+(9, 'Retired', 'To view all retired Arduino products, please visit our Retired Products & Legacy Documentation page. This includes all legacy products, getting started guides and other documentation that is considered legacy.', '2022-12-31 07:38:04', '2022-12-31 10:38:04'),
+(12, 'jack', 'hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello', '2022-12-31 08:43:34', '2022-12-31 11:43:34'),
+(13, 'ahmad', 'hello worldhello worldhello worldhello worldhello worldhello worldhello world', '2022-12-31 08:44:49', '2022-12-31 11:44:49'),
+(14, 'assa', 'asasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasas', '2022-12-31 08:48:07', '2022-12-31 11:48:07'),
+(15, 'zx', 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz', '2022-12-31 08:49:28', '2022-12-31 11:49:28'),
+(16, 'dzd', 'zdasasassa', '2022-12-31 08:53:56', '2022-12-31 11:53:56'),
+(17, 'asas', 'asasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasas', '2022-12-31 08:55:36', '2022-12-31 11:55:36'),
+(18, 'as', 'assddsdsdsdsd', '2022-12-31 08:56:48', '2022-12-31 11:56:48'),
+(20, 'jejejjejejejje', 'hehehhehehhe', '2022-12-31 09:08:31', '2022-12-31 12:08:31'),
+(21, 'xddfxf', 'xdsdcxxdsdcxxdsdcxxdsdcxxdsdcxxdsdcxxdsdcxxdsdcx', '2022-12-31 09:10:38', '2022-12-31 12:10:38'),
+(22, 'sdsdsd', 'sdsd', '2022-12-31 09:13:22', '2022-12-31 12:13:22'),
+(23, 'hzjxn', 'zxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzxzx', '2022-12-31 09:21:44', '2022-12-31 12:21:44'),
+(24, 'sdc', 'dfgv', '2022-12-31 09:39:34', '2022-12-31 12:39:34'),
+(25, ' xcxc', 'dssd', '2022-12-31 10:04:54', '2022-12-31 13:04:54'),
+(26, 'as', 'asas', '2022-12-31 10:59:49', '2022-12-31 13:59:49'),
+(27, 'asas', 'asas', '2022-12-31 11:00:23', '2022-12-31 14:00:23'),
+(28, 'as', 'asas', '2022-12-31 11:00:52', '2022-12-31 14:00:52'),
+(29, 'my name is hack', 'oh no ', '2022-12-31 12:03:04', '2022-12-31 15:03:04'),
+(32, 'huda', '123456', '2022-12-31 14:58:22', '2022-12-31 17:58:22');
 
 -- --------------------------------------------------------
 
@@ -173,7 +202,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -239,11 +268,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
- 
-
-
-
-
-
-
-
