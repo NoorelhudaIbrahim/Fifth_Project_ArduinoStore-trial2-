@@ -158,7 +158,7 @@
                                 <label for="f-option4">I’ve read and accept the </label>
                                 <a href="#">terms & conditions*</a>
                             </div>
-                            <a class="primary-btn" href="#">Proceed to Paypal</a>
+                            <a class="primary-btn" href="confirmation.php">Proceed to Paypal</a>
                         </div>
                     </div>
                 </div>
