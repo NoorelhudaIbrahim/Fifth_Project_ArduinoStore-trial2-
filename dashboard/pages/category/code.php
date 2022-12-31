@@ -4,42 +4,51 @@ session_start();
 require('config.php');
 include('../functions/myfunctions.php');
 
-if(isset($_POST['add_category_btn']))
+
+if($_SERVER['REQUEST_METHOD']=="POST"&&isset($_POST['add_category_btn']))
 {
     $name = $_POST['name'];
-    $slug = $_POST['slug'];
     $description = $_POST['description'];
-    $meta_title = $_POST['meta_title'];
-    $meta_description = $_POST['meta_description'];
-    $meta_keywords = $_POST['meta_keywords'];
-    $Status = isset($_POST['status']) ? '1':'0';
-    $popular = isset($_POST['popular']) ? '1':'0';
-
-    echo $name;
-    // $image = $_FILES['image']['name'];
-    // $path = "../uploads";
-
-    // $image_ext = pathinfo($image, PATHINFO_EXTENION);
-    // $filename = time().'.'.$image_ext;
 
     $cate_query = "INSERT INTO category 
-    (category_id,name,slug,description,meta_title,meta_description,meta_keywords,status,popular)
-    VALUES (NULL,'$name','$slug','$description','$meta_title','$meta_description','$meta_keywords','$Status','$popular')";
+    (category_id,name,description)
+    VALUES (NULL,'$name','$description')";
 
     $conn->query($cate_query);
-    header("location:add-category.php");
+    header("location:category.php");
 
-    // if($cate_query_run){
-    //     move_uploaded_file($_FILES['image']['tmp_name'], $path.'/'.$filename);
+}else if(isset($_POST['update_category_btn'])){
 
-    //     redirect("add-category.php" , "Category Added Successfully");
+    $category_id = $_POST['category_id'];
+    $name = $_POST['name'];
+    $description = $_POST['description'];
 
-    // }else{
-    //     redirect("add-category.php" , "Something Went Wrong");
-    // }
+    $update_query = "UPDATE category SET name='$name', description='$description' WHERE category_id='$category_id'  ";
+
+    $update_query_run = mysqli_query($conn , $update_query);
 
 
+    if($update_query_run)
+    {
+        redirect("category.php?catecory_id=$category_id", "Category Updated Successfully");   
+    }else{
+        redirect("category.php?catecory_id=$category_id", "something went wrong");  
+    }
+    
+}else if(isset($_POST['delete_category_btn'])){
+    $category_id = mysqli_real_escape_string($conn , $_POST['category_id']);
+    $delete_query = "DELETE FROM category WHERE category_id='$category_id' ";
+    $delete_query_run = mysqli_query($conn , $delete_query);
+
+
+    if($delete_query_run)
+    {
+        redirect("category.php?catecory_id=$category_id", "Category Delete Successfully");   
+    }else{
+        redirect("category.php?catecory_id=$category_id", "something went wrong");  
+    }
 }
+
 
 
 

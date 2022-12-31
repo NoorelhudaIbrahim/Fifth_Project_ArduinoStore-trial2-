@@ -381,29 +381,49 @@
         <div class="main-panel">
           <div class="content-wrapper">
                 <div class="col-md-12">
+                        <?php 
+                            include('../functions/myfunctions.php');
+                            if(isset($_GET['category_id']))
+                            {
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Add Category</h4>
-                        </div>
-                        <div class="card-body">
-                            <form action="code.php" method="POST">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="">Name</label><br>
-                                        <input type="text" name="name" placeholder="Enter Category Name" class="from-control" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="">Description</label><br>
-                                        <textarea rows="3" name="description" placeholder="Enter Description" class="from-control" required></textarea>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary" name="add_category_btn">Save</button>
-                                    </div>
-                                </div>
-                            </form> 
-                        </div>
-                    </div>
+                                $id = $_GET['category_id'];
+                                $category = getByID("category", $id);
+
+                                if(mysqli_num_rows($category) > 0){
+                                        $data = mysqli_fetch_array($category);
+                                        ?>
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4>Edit Category</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                    <form action="code.php" method="POST">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <input type="hidden" name="category_id" value="<?= $data['category_id']?>">
+                                                                <label for="">Name</label><br>
+                                                                <input type="text" name="name" value="<?= $data['name']?>" placeholder="Enter Category Name" class="from-control" required>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="">Description</label><br>
+                                                                <textarea rows="3" name="description" placeholder="Enter Description" class="from-control" required><?= $data['description']?></textarea>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <button type="submit" class="btn btn-primary" name="update_category_btn">Update</button>
+                                                            </div>
+                                                        </div>
+                                                    </form> 
+                                                </div>
+                                            </div>
+                                        <?php
+                                }else{
+                                    echo "Category not found";
+                                }
+
+                            }else{
+                                echo "Id was missing from url";
+                            }
+                        ?>
                 </div>
           </div>
           <!-- content-wrapper ends -->
