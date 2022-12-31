@@ -18,6 +18,25 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
   </head>
+  <style>
+    .form-control {
+        border: 1px solid #b3a1a1 ! important;
+        padding: 8px 10px;
+    }
+    .row{
+      display: block !important;
+    }
+    input{
+        width :100% !important;
+        height : 50px !important ;
+        margin-bottom: 30px;
+    }
+    textarea{
+      width :100% !important;
+      height: 150px !important;
+    }
+
+  </style>
   <body>
     <div class="container-scroller">
       <!-- partial:../../partials/_sidebar.html -->
@@ -88,14 +107,20 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link"  href="../users/users.php" >
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
               <span class="menu-title">Users</span>
-              
+              <i class="menu-arrow"></i>
             </a>
-            
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item menu-items">
             <a class="nav-link" href="../../pages/forms/basic_elements.html">
@@ -114,11 +139,11 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="add-category.php">
+            <a class="nav-link" href="category.php">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">All Category</span>
+              <span class="menu-title">All Categories</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -355,69 +380,47 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title"> Chart-js </h3>
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Charts</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Chart-js</li>
-                </ol>
-              </nav>
-            </div>
-            <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Line chart</h4>
-                    <canvas id="lineChart" style="height:250px"></canvas>
-                  </div>
+                <div class="col-md-12">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Add user</h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="code.php" method="POST">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="">Name</label><br>
+                                        <input type="text" name="name" placeholder="Enter user name" class="from-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="">Email</label><br>
+                                        <input type="text" name="email" placeholder="Enter user email" class="from-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="">Mobile</label><br>
+                                        <input type="text" name="mobile" placeholder="Enter user mobile" class="from-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="">Password</label><br>
+                                        <input type="text" name="password" placeholder="Enter user password" class="from-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="">Is_Admin</label><br>
+                                        <input type="text" name="is_admin" placeholder="1 or 0" class="from-control" required>
+                                    </div>
+                                    <!-- <div class="col-md-6">
+                                        <label for="">Description</label><br>
+                                        <textarea rows="3" name="description" placeholder="Enter Description" class="from-control" required></textarea>
+                                    </div> -->
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary" name="add_category_btn">Save</button>
+                                    </div>
+                                </div>
+                            </form> 
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Bar chart</h4>
-                    <canvas id="barChart" style="height:230px"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Area chart</h4>
-                    <canvas id="areaChart" style="height:250px"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Doughnut chart</h4>
-                    <canvas id="doughnutChart" style="height:250px"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Pie chart</h4>
-                    <canvas id="pieChart" style="height:250px"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Scatter chart</h4>
-                    <canvas id="scatterChart" style="height:250px"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
