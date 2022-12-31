@@ -139,11 +139,11 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="category.php">
+            <a class="nav-link" href="add-category.php">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">All Categories</span>
+              <span class="menu-title">Add Category</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -382,28 +382,61 @@
           <div class="content-wrapper">
                 <div class="col-md-12">
 
+                    <?php
+                    include('../functions/myfunctions.php');
+                    
+                    ?>
                     <div class="card">
                         <div class="card-header">
-                            <h4>Add Category</h4>
+                            <h4>Categories</h4>
+                            <a href="add-category.php"><button class="btn btn-primary" name="add_category_btn">Create</button></a>
                         </div>
                         <div class="card-body">
-                            <form action="code.php" method="POST">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="">Name</label><br>
-                                        <input type="text" name="name" placeholder="Enter Category Name" class="from-control" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="">Description</label><br>
-                                        <textarea rows="3" name="description" placeholder="Enter Description" class="from-control" required></textarea>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary" name="add_category_btn">Save</button>
-                                    </div>
-                                </div>
-                            </form> 
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        $category = getAll("category");
+
+                                        if(mysqli_num_rows($category) > 0) {
+                                            foreach($category as $item)
+                                            {
+                                                ?>
+                                                <tr>
+                                                    <td><?= $item['category_id'] ?></td>
+                                                    <td><?= $item['name'] ?></td>
+                                                    <td><textarea rows="2" disabled><?= $item['description'] ?></textarea></td>
+                                                    <td>
+                                                        <a href="edit-category.php?category_id=<?= $item['category_id'] ?>" class="btn btn-primary">Edit</a><br><br>
+                                                    
+                                                        <form action="code.php" method="POST">
+                                                            <input type="hidden" name="category_id" value="<?= $item['category_id'] ?>">
+                                                            <button type="submit" class="btn btn-danger" name="delete_category_btn">Delete</button> 
+                                                        </form>
+                                                    </td>
+
+                                                </tr>
+
+                                                <?php
+                                            }
+                                        }else{
+                                            echo "No records found";
+                                        }
+                                    ?>
+
+                                </tbody>
+                            </table>
                         </div>
+                        
                     </div>
+
                 </div>
           </div>
           <!-- content-wrapper ends -->
