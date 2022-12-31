@@ -18,6 +18,25 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
   </head>
+  <style>
+    .form-control {
+        border: 1px solid #b3a1a1 ! important;
+        padding: 8px 10px;
+    }
+    .row{
+      display: block !important;
+    }
+    input{
+        width :100% !important;
+        height : 50px !important ;
+        margin-bottom: 30px;
+    }
+    textarea{
+      width :100% !important;
+      height: 150px !important;
+    }
+
+  </style>
   <body>
     <div class="container-scroller">
       <!-- partial:../../partials/_sidebar.html -->
@@ -76,7 +95,7 @@
               </div>
             </div>
           </li>
-          <li class="nav-item nav-category">
+          <li class="nav-item nav-user">
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
@@ -88,14 +107,14 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link"  href="../users/users.php" >
+            <a class="nav-link" href="users.html" >
               <span class="menu-icon">
                 <i class="mdi mdi-laptop"></i>
               </span>
               <span class="menu-title">Users</span>
               
             </a>
-            
+          
           </li>
           <li class="nav-item menu-items">
             <a class="nav-link" href="../../pages/forms/basic_elements.html">
@@ -114,11 +133,11 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="add-category.php">
+            <a class="nav-link" href="add-user.php">
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">All Category</span>
+              <span class="menu-title">Add user</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -355,69 +374,74 @@
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
-            <div class="page-header">
-              <h3 class="page-title"> Chart-js </h3>
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Charts</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Chart-js</li>
-                </ol>
-              </nav>
-            </div>
-            <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Line chart</h4>
-                    <canvas id="lineChart" style="height:250px"></canvas>
-                  </div>
+                <div class="col-md-12">
+
+                    <?php
+                    include('../functions/myfunctions.php');
+                    
+                    ?>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Users</h4>
+                            <a href="add-user.php"><button class="btn btn-primary" name="add_user_btn">Create</button></a>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>E-mail</th>
+                                        <th>Mobile</th>
+                                        <th>Password</th>
+                                        <th>Created at</th>
+                                        <th>is_admin</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        $user = getAll("user");
+
+                                        if(mysqli_num_rows($user) > 0) {
+                                            foreach($user as $item)
+                                            {
+                                                ?>
+                                                <tr>
+                                                    <td><?= $item['user_id'] ?></td>
+                                                    <td><?= $item['user_name'] ?></td>
+                                                    <td><?= $item['email'] ?></td>
+                                                    <td><?= $item['mobile'] ?></td>
+                                                    <td><?= $item['password'] ?></td>
+                                                    <td><?= $item['created_at'] ?></td>
+                                                    <td><?= $item['is_admin'] ?></td>
+
+
+                                                    <td>
+                                                        <a href="edit-user.php?user_id=<?= $item['user_id'] ?>" class="btn btn-primary">Edit</a><br><br>
+                                                    
+                                                        <form action="code.php" method="POST">
+                                                            <input type="hidden" name="user_id" value="<?= $item['user_id'] ?>">
+                                                            <button type="submit" class="btn btn-danger" name="delete_user_btn">Delete</button> 
+                                                        </form>
+                                                    </td>
+
+                                                </tr>
+
+                                                <?php
+                                            }
+                                        }else{
+                                            echo "No records found";
+                                        }
+                                    ?>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+
                 </div>
-              </div>
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Bar chart</h4>
-                    <canvas id="barChart" style="height:230px"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Area chart</h4>
-                    <canvas id="areaChart" style="height:250px"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Doughnut chart</h4>
-                    <canvas id="doughnutChart" style="height:250px"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Pie chart</h4>
-                    <canvas id="pieChart" style="height:250px"></canvas>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Scatter chart</h4>
-                    <canvas id="scatterChart" style="height:250px"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
