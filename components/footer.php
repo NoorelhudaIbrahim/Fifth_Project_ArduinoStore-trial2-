@@ -22,16 +22,16 @@
          <h3>contact us</h3>
          <a href="https://wa.me/+962778079485" target=_blank;><i class="fas fa-phone"></i> +962778079485</a>
          <a href="https://wa.me/+962778079485" target=_blank;><i class="fas fa-phone"></i> +111 222 3333</a>
-         <a href="mailto:hudaausaily@gmail.com" target=_blank;><i class="fas fa-envelope"></i> hudaausaily@gmail.com</a>
+         <a href="mailto:arduinostore@gmail.com" target=_blank;><i class="fas fa-envelope"></i> arduinostore@gmail.com</a>
          <a href="https://satellites.pro/Google_plan/Aqaba_map " target=_blank;><i class="fas fa-map-marker-alt"></i>Aqaba,jordan </a>
       </div>
 
       <div class="box">
          <h3>follow us</h3>
-         <a href="#"><i class="fab fa-facebook-f"></i>facebook</a>
-         <a href="#"><i class="fab fa-twitter"></i>twitter</a>
-         <a href="#"><i class="fab fa-instagram"></i>instagram</a>
-         <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+         <a href="https://www.facebook.com/Store.Arduino?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i>facebook</a>
+         <a href="https://twitter.com/arduino"><i class="fab fa-twitter"></i>twitter</a>
+         <a href="https://www.instagram.com/arduino.cc/"><i class="fab fa-instagram"></i>instagram</a>
+         <a href="https://www.linkedin.com/company/arduino/"><i class="fab fa-linkedin"></i>linkedin</a>
       </div>
 
    </section>
