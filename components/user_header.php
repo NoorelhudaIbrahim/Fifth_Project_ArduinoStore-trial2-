@@ -21,12 +21,6 @@
          <a href="home.php">Home</a>
          <a href="about.php">About us</a>
          <a href="orders.php">Orders</a>
-         <!-- <select name="dropDown" id="dropDown"> 
-   <option>shop</option>         
-  <option value="#heading1">one</option>
-  <option value="#heading2">two</option>
-  <option value="#heading3">three</option>
-         </select> -->
          <a href="shop.php">Shop</a>
          <a href="contact.php">Contacts</a>
       </nav>
@@ -42,10 +36,10 @@
             $total_cart_counts = $count_cart_items->rowCount();
          ?>
          <div id="menu-btn" class="fas fa-bars"></div>
-         <a href="search_page.php"><i class="fas fa-search"></i></a>
+         <a href="search_page.php"><i class="fa-brands fa-searchengin" style="color: #247580;font-size: 2.1rem; margin-right:10px;"></i></a>
          <!-- <a href="wishlist.php"><i class="fa-solid fa-heart-circle-plus"></i><span class="num_size">(<?= $total_wishlist_counts; ?>)</span></a> -->
-         <a href="cart.php"><i class="fas fa-shopping-cart"></i><span class="num_size">(<?= $total_cart_counts; ?>)</span></a>
-         <div id="user-btn" class="fas fa-user"></div>
+         <a href="cart.php" style="margin-right:10px;"><i class="fa-solid fa-bag-shopping" style="color: #247580;font-size: 2rem; "></i><span>(<?= $total_cart_counts; ?>)</span></a>
+         <div id="user-btn" class="fa-solid fa-user-tie" style="color: #247580;font-size: 2rem;"></div>
       </div>
 
       <div class="profile">
