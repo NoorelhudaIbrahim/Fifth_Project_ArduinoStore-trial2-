@@ -20,10 +20,10 @@
 
       <div class="box">
          <h3>contact us</h3>
-         <a href="tel:1234567890"><i class="fas fa-phone"></i> +123 456 7899</a>
-         <a href="tel:11122233333"><i class="fas fa-phone"></i> +111 222 3333</a>
-         <a href="mailto:shaikh@gmail.com"><i class="fas fa-envelope"></i> shaikh@gmail.com</a>
-         <a href="https://www.google.com/myplace"><i class="fas fa-map-marker-alt"></i> mumbai, india - 400104 </a>
+         <a href="https://wa.me/+962778079485" target=_blank;><i class="fas fa-phone"></i> +962778079485</a>
+         <a href="https://wa.me/+962778079485" target=_blank;><i class="fas fa-phone"></i> +111 222 3333</a>
+         <a href="mailto:hudaausaily@gmail.com" target=_blank;><i class="fas fa-envelope"></i> hudaausaily@gmail.com</a>
+         <a href="https://satellites.pro/Google_plan/Aqaba_map " target=_blank;><i class="fas fa-map-marker-alt"></i>Aqaba,jordan </a>
       </div>
 
       <div class="box">
