@@ -33,7 +33,7 @@ include 'components/wishlist_cart.php';
    
 <?php include 'components/user_header.php'; ?>
 
-<section class="products">
+<section class="category">
 
    <h1 class="heading">category</h1>
 
@@ -41,10 +41,10 @@ include 'components/wishlist_cart.php';
 
    <?php
      $category = $_GET['category'];
-     $select_products = $conn->prepare("SELECT * FROM `products` WHERE name LIKE '%{$category}%'"); 
-     $select_products->execute();
-     if($select_products->rowCount() > 0){
-      while($fetch_product = $select_products->fetch(PDO::FETCH_ASSOC)){
+     $select_category = $conn->prepare("SELECT * FROM `category` WHERE name LIKE '%{$category}%'"); 
+     $select_category->execute();
+     if($select_category->rowCount() > 0){
+      while($fetch_product = $select_category->fetch(PDO::FETCH_ASSOC)){
    ?>
    <form action="" method="post" class="box">
       <input type="hidden" name="pid" value="<?= $fetch_product['id']; ?>">
@@ -64,7 +64,7 @@ include 'components/wishlist_cart.php';
    <?php
       }
    }else{
-      echo '<p class="empty">no products found!</p>';
+      echo '<p class="empty">no category found!</p>';
    }
    ?>
 
