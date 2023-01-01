@@ -131,8 +131,6 @@ if(isset($_GET['delete'])){
             <span>product details (required)</span>
             <textarea name="details" placeholder="enter product details" class="box" required maxlength="500" cols="30" rows="10"></textarea>
          </div>
-      </div>
-      
       <input type="submit" value="add product" class="btn" name="add_product">
    </form>
 

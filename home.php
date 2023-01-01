@@ -92,54 +92,35 @@ include 'components/wishlist_cart.php';
 
    <div class="swiper category-slider">
 
-   <div class="swiper-wrapper">
+      <div class="swiper-wrapper">
 
-   <a href="category.php?category=laptop" class="swiper-slide slide">
-      <img src="images/icon-1.png" alt="">
-      <h3>laptop</h3>
-   </a>
+         <?php
+         $select_category = $conn->prepare("SELECT * FROM `category` LIMIT 6"); 
+         $select_category->execute();
+         if($select_category->rowCount() > 0){
+            while($fetch_category = $select_category->fetch(PDO::FETCH_ASSOC)){
+         ?>
+         <form action="" method="post" class="swiper-slide slide">
+            <input type="hidden" name="pid" value="<?= $fetch_category['category_id']; ?>">
+            <input type="hidden" name="name" value="<?= $fetch_category['category_name']; ?>">
+            <input type="hidden" name="description" value="<?= $fetch_category['category_description']; ?>">
+            <input type="hidden" name="image" value="<?= $fetch_category['category_imge']; ?>">
+            <img src="uploaded_img/<?= $fetch_category['category_imge']; ?>" alt="">
+            <div class="name"><?= $fetch_category['category_name']; ?></div>
+            <!-- <div class="flex">
+               <div class="price"><span>$</span><span>/-</span></div>
+               <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
+            </div> -->
+         </form>
+         <?php
+            }
+         }else{
+            echo '<p class="empty">no category added yet!</p>';
+         }
+         ?>
 
-   <a href="category.php?category=tv" class="swiper-slide slide">
-      <img src="images/icon-2.png" alt="">
-      <h3>tv</h3>
-   </a>
-
-   <a href="category.php?category=camera" class="swiper-slide slide">
-      <img src="images/icon-3.png" alt="">
-      <h3>camera</h3>
-   </a>
-
-   <a href="category.php?category=mouse" class="swiper-slide slide">
-      <img src="images/icon-4.png" alt="">
-      <h3>mouse</h3>
-   </a>
-
-   <a href="category.php?category=fridge" class="swiper-slide slide">
-      <img src="images/icon-5.png" alt="">
-      <h3>fridge</h3>
-   </a>
-
-   <a href="category.php?category=washing" class="swiper-slide slide">
-      <img src="images/icon-6.png" alt="">
-      <h3>washing machine</h3>
-   </a>
-
-   <a href="category.php?category=smartphone" class="swiper-slide slide">
-      <img src="images/icon-7.png" alt="">
-      <h3>smartphone</h3>
-   </a>
-
-   <a href="category.php?category=watch" class="swiper-slide slide">
-      <img src="images/icon-8.png" alt="">
-      <h3>watch</h3>
-   </a>
-
+      </div>
    </div>
-
-   <div class="swiper-pagination"></div>
-
-   </div>
-
 </section>
 
 <section class="home-products">

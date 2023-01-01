@@ -43,6 +43,28 @@ if(!isset($admin_id)){
 
       <div class="box">
          <?php
+            $select_products = $conn->prepare("SELECT * FROM `products`");
+            $select_products->execute();
+            $number_of_products = $select_products->rowCount()
+         ?>
+         <h3><?= $number_of_products; ?></h3>
+         <p>products added</p>
+         <a href="products.php" class="btn">see products</a>
+      </div>
+
+      <div class="box">
+         <?php
+            $select_admins = $conn->prepare("SELECT * FROM `admins`");
+            $select_admins->execute();
+            $number_of_admins = $select_admins->rowCount()
+         ?>
+         <h3><?= $number_of_admins; ?></h3>
+         <p>category</p>
+         <a href="category.php" class="btn">Update category</a>
+      </div>
+
+      <div class="box">
+         <?php
             $total_pendings = 0;
             $select_pendings = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
             $select_pendings->execute(['pending']);
@@ -82,17 +104,6 @@ if(!isset($admin_id)){
          <h3><?= $number_of_orders; ?></h3>
          <p>orders placed</p>
          <a href="placed_orders.php" class="btn">see orders</a>
-      </div>
-
-      <div class="box">
-         <?php
-            $select_products = $conn->prepare("SELECT * FROM `products`");
-            $select_products->execute();
-            $number_of_products = $select_products->rowCount()
-         ?>
-         <h3><?= $number_of_products; ?></h3>
-         <p>products added</p>
-         <a href="products.php" class="btn">see products</a>
       </div>
 
       <div class="box">
