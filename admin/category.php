@@ -17,11 +17,11 @@ if(isset($_POST['add_category'])){
    $descreption = $_POST['descreption'];
    $descreption = filter_var($descreption, FILTER_SANITIZE_STRING);
    
-   $image_01 = $_FILES['image_01']['name'];
-   $image_01 = filter_var($image_01, FILTER_SANITIZE_STRING);
-   $image_size_01 = $_FILES['image_01']['size'];
-   $image_tmp_name_01 = $_FILES['image_01']['tmp_name'];
-   $image_folder_01 = '../uploaded_img/'.$image_01;
+   $cat_01 = $_FILES['cat_01']['name'];
+   $cat_01 = filter_var($cat_01, FILTER_SANITIZE_STRING);
+   $image_size_01 = $_FILES['cat_01']['size'];
+   $image_tmp_name_01 = $_FILES['cat_01']['tmp_name'];
+   $image_folder_01 = '../uploaded_img/'.$cat_01;
 
 
    $select_category = $conn->prepare("SELECT * FROM `category` WHERE category_name = ?");
@@ -32,7 +32,7 @@ if(isset($_POST['add_category'])){
    }else{
       echo ('test');
       $insert_category = $conn->prepare("INSERT INTO `category`(category_name, category_description, category_imge) VALUES(?,?,?)");
-      $insert_category->execute([$name, $descreption, $image_01]);
+      $insert_category->execute([$name, $descreption, $cat_01]);
 
       if($insert_category){
          if($image_size_01 > 2000000 ){
@@ -54,7 +54,7 @@ if(isset($_GET['delete'])){
    $delete_category_image = $conn->prepare("SELECT * FROM `category` WHERE category_id = ?");
    $delete_category_image->execute([$delete_id]);
    $fetch_delete_image = $delete_category_image->fetch(PDO::FETCH_ASSOC);
-   unlink('../uploaded_img/'.$fetch_delete_image['image_01']);
+   unlink('../uploaded_img/'.$fetch_delete_image['cat_01']);
    $delete_category = $conn->prepare("DELETE FROM `category` WHERE category_id = ?");
    $delete_category->execute([$delete_id]);
    $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE pid = ?");
@@ -100,7 +100,7 @@ if(isset($_GET['delete'])){
          </div>
         <div class="inputBox">
             <span>image (required)</span>
-            <input type="file" name="image_01" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
+            <input type="file" name="cat_01" accept="image/jpg, image/jpeg, image/png, image/webp" class="box" required>
         </div>
       </div>
       
