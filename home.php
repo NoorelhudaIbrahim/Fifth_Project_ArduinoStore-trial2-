@@ -142,7 +142,7 @@ include 'components/wishlist_cart.php';
 </div>
 <div >
 
-<section class="category" >
+<!-- <section class="category" >
 
    <h1 class="heading">shop by category</h1>
 
@@ -196,7 +196,7 @@ include 'components/wishlist_cart.php';
 
    </div>
 
-</section>
+</section> -->
 
 <section class="home-products">
 

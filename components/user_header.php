@@ -11,11 +11,11 @@
    }
 ?>
 
-<header class="header">
+<header class="header ">
 
    <section class="flex">
 
-      <a href="home.php" class="logo"><span><img style="height:50px; width:70px;" src="./uploaded_img/PHP.png"></span></a>
+      <a href="home.php" class="logo"><span><img style="height:60px; width:70px;" src="images/logo.png"></span></a>
 
       <nav class="navbar">
          <a href="home.php">Home</a>
@@ -36,10 +36,9 @@
             $total_cart_counts = $count_cart_items->rowCount();
          ?>
          <div id="menu-btn" class="fas fa-bars"></div>
-         <a href="search_page.php"><i class="fa-brands fa-searchengin" style="color: #247580;font-size: 2.1rem; margin-right:10px;"></i></a>
-         <!-- <a href="wishlist.php"><i class="fa-solid fa-heart-circle-plus"></i><span class="num_size">(<?= $total_wishlist_counts; ?>)</span></a> -->
-         <a href="cart.php" style="margin-right:10px;"><i class="fa-solid fa-bag-shopping" style="color: #247580;font-size: 2rem; "></i><span>(<?= $total_cart_counts; ?>)</span></a>
-         <div id="user-btn" class="fa-solid fa-user-tie" style="color: #247580;font-size: 2rem;"></div>
+         <a href="search_page.php"><i class="fa-brands fa-searchengin" style="color: white;font-size: 2.1rem; margin-right:10px;"></i></a>
+         <a href="cart.php" style="margin-right:10px;"><i class="fa-solid fa-bag-shopping" style="color: white;font-size: 2rem; "></i><p style=" display:inline-block; color:white; ">(<?= $total_cart_counts; ?>)</p></a>
+         <div id="user-btn" class="fa-solid fa-user-tie" style="color: white;font-size: 2rem;"></div>
       </div>
 
       <div class="profile">
