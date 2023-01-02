@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2023 at 03:22 PM
+-- Generation Time: Jan 02, 2023 at 02:37 PM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -61,7 +61,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `user_id`, `pid`, `name`, `price`, `quantity`, `image`) VALUES
-(5, 1, 1, 'urdino', 23, 1, 'hexagon-line-abstract-blue-technology-background-vector-20582069.jpg');
+(10, 2, 26, 'ali naserhh', 1212, 1, '1274158[9].jpg');
 
 -- --------------------------------------------------------
 
@@ -83,8 +83,9 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `category_name`, `category_description`, `create_at`, `update_at`, `category_imge`) VALUES
-(1, 'userAdmin', 'dsfadfdsafdsfdsfadsfdfdsfdsafdasdfdsfds', '2023-01-01 12:45:18', '2023-01-01 12:45:18', 'frontend.png'),
-(3, 'cxvzxcv', 'dsfadfdsafdsfdsfadsfdfdsfdsafdasdfdsfds', '2023-01-01 13:08:43', '2023-01-01 13:08:43', 'PHP.png');
+(20, 'mhamed', 'my category', '2023-01-02 13:32:30', '2023-01-02 13:32:30', 'Canary-300x300.jpg'),
+(21, 'karam', 'my category', '2023-01-02 13:33:06', '2023-01-02 13:33:06', '1024846.jpg'),
+(22, 'jack', 'asdas', '2023-01-02 13:33:28', '2023-01-02 13:33:28', 'images (1).jfif');
 
 -- --------------------------------------------------------
 
@@ -100,6 +101,13 @@ CREATE TABLE `messages` (
   `number` varchar(12) NOT NULL,
   `message` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `user_id`, `name`, `email`, `number`, `message`) VALUES
+(1, 2, 'ali572 mhamdgmail.co', 'mhamd@gmail.com', '7532573757', 'dfsfsddhdfgfdgfdgfdsgfdsgsdf');
 
 -- --------------------------------------------------------
 
@@ -121,6 +129,13 @@ CREATE TABLE `orders` (
   `payment_status` varchar(20) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `method`, `address`, `total_products`, `total_price`, `placed_on`, `payment_status`) VALUES
+(3, 2, 'ali naser', '7575727527', 'mhamd@gmail.com', 'credit card', 'flat no. aqaba, eightth, aqaba, 5727275, Jordan - 77110', 'sadasda (4755 x 1) - ali naser (4527 x 1) - ', 9282, '2023-01-02', 'pending');
+
 -- --------------------------------------------------------
 
 --
@@ -134,15 +149,17 @@ CREATE TABLE `products` (
   `price` int(10) NOT NULL,
   `image_01` varchar(100) NOT NULL,
   `image_02` varchar(100) NOT NULL,
-  `image_03` varchar(100) NOT NULL
+  `image_03` varchar(100) NOT NULL,
+  `category` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `details`, `price`, `image_01`, `image_02`, `image_03`) VALUES
-(1, 'urdino', 'fasddfasfdsf', 23, 'hexagon-line-abstract-blue-technology-background-vector-20582069.jpg', 'arduino-board-isometric-designed_255805-15.webp', 'PHP.png');
+INSERT INTO `products` (`id`, `name`, `details`, `price`, `image_01`, `image_02`, `image_03`, `category`) VALUES
+(26, 'ali naserhh', '1212', 1212, '1274158[9].jpg', '1024846.jpg', '3160DQHOFLL._AC_SY1000_.jpg', 'karam'),
+(27, 'ali naser', 'dsfadsfadsfdsfadsfadsfsdaf', 25, 'dog-cat-fish.webp', 'dog_thumb_1644498337052_1644498346070.webp', 'American-Bulldog-standing-in-three-quarter-view.jpg', 'jack');
 
 -- --------------------------------------------------------
 
@@ -162,7 +179,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(1, 'muhammed', 'nmhammed50@gmail.com', '7d7ce76ed0aa112c7056a56887623ea79c28ae3a');
+(1, 'muhammed', 'nmhammed50@gmail.com', '7d7ce76ed0aa112c7056a56887623ea79c28ae3a'),
+(2, 'admin', 'mhamd@gmail.com', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2');
 
 -- --------------------------------------------------------
 
@@ -245,37 +263,37 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `wishlist`

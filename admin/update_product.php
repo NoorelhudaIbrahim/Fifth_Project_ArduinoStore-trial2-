@@ -82,6 +82,7 @@ if(isset($_POST['update'])){
       }
    }
 
+   header("Location:products.php");
 }
 
 ?>
@@ -143,7 +144,6 @@ if(isset($_POST['update'])){
       <input type="file" name="image_03" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
       <div class="flex-btn">
          <input type="submit" name="update" class="btn" value="update">
-         <a href="products.php" class="option-btn">go back</a>
       </div>
    </form>
    
