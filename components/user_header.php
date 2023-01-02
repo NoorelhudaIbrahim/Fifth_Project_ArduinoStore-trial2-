@@ -10,7 +10,13 @@
       }
    }
 ?>
-
+<style>
+   .navbar a{
+      /* justify-content: center; */
+      padding:50px;
+   }
+ 
+</style>
 <header class="header">
 
    <section class="flex">
