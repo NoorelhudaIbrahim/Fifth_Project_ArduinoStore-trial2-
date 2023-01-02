@@ -60,6 +60,9 @@ include 'components/wishlist_cart.php';
 
       span , h3{
          color: #165168 !important;
+         background: -webkit-linear-gradient(#165168,#165168, #76A5B2); 
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
       }
       .swiper-pagination-bullet{
          background-color:#165168 !important;
