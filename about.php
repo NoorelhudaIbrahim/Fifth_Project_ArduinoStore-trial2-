@@ -71,7 +71,7 @@ if(isset($_SESSION['user_id'])){
 
             Our vision is to make Arduino available to everyone, whether you are a student, maker or professional, which is why we now have three segments to our business. These segments work together as an ecosystem with a shared mindset: we started with Maker, and that has evolved into Education and PRO solutions.</p>
 
-         <a href="contact.php" class="btn" >contact us</a>
+         <a href="contact.php" class="btn" >Contact </a>
       </div>
 
    </div>
