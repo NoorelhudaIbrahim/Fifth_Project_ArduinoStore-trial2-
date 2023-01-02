@@ -45,7 +45,54 @@ if(isset($_POST['submit'])){
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
+   <style>
+         body{
+            background-image: url("project images/Site-vitrine.png");
+            background-repeat: no-repeat;
+            background-size: 50%;
+         }
+         input{
+            background-color: none !important;
+         }
+         .btn_login_now , .option-btn{
+            background-color: rgb(180 76 99);
+            color: white;
+         }
+         
+         .footer{
+            background:linear-gradient(
+               to right,
+               rgb(133 11 163),
+               rgb(180 76 99),
+               rgb(157 60 41 / 51%)
+            )     ;
+         
+         }
+         form h3{
+            position:absolute !important;
+            left:60px !important;
+            top:15pc !important;
+            margin-bottom : 30px;
+            font-size:60px !important;
+            color:white !important;
+            
+         }
+         .footer a {
+            color:white !important;
+         }
+         .footer h3 {
+            color:rgb(250 240 240) !important
+         }
 
+         h3{
+            margin-bottom : 30px;
+         }
+
+         .footer .fab , .fas{
+            color:white !important ;
+         }
+
+   </style>
 </head>
 <body>
    
@@ -57,25 +104,13 @@ if(isset($_POST['submit'])){
       <h3>login now</h3>
       <input type="email" name="email" required placeholder="enter your email" maxlength="50"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="login now" class="btn" name="submit">
+      <input type="submit" value="login now" class="btn btn_login_now" name="submit">
       <p>don't have an account?</p>
       <a href="user_register.php" class="option-btn">register now</a>
    </form>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br>
 <?php include 'components/footer.php'; ?>
 
 <script src="js/script.js"></script>
