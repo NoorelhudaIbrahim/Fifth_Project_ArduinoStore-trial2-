@@ -54,11 +54,11 @@ if(!isset($admin_id)){
 
       <div class="box">
          <?php
-            $select_admins = $conn->prepare("SELECT * FROM `admins`");
-            $select_admins->execute();
-            $number_of_admins = $select_admins->rowCount()
+            $select_category = $conn->prepare("SELECT * FROM `category`");
+            $select_category->execute();
+            $number_of_category = $select_category->rowCount()
          ?>
-         <h3><?= $number_of_admins; ?></h3>
+         <h3><?= $number_of_category; ?></h3>
          <p>category</p>
          <a href="category.php" class="btn">see category</a>
       </div>

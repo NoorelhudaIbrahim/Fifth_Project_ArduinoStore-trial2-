@@ -48,10 +48,7 @@ html{
    overflow-x: hidden;
 }
 
-body{
-   /* background-color: var(--light-bg); */
-   background-image:url("images/bg.jpg") ;
-}
+
 
 section{
    padding:0.5rem;
@@ -63,9 +60,10 @@ section{
 }
 
 .heading{
-   font-size: 2rem;
-   color:var(--black);
-   margin-bottom: 2rem;
+   font-size: 3rem;
+   color:#117693;
+   margin-top:-3rem;
+   margin-bottom: 5rem;
    text-align: center;
    text-transform: uppercase;
 }
@@ -151,6 +149,8 @@ section{
    border-radius: .5rem;
    font-size: 2rem;
    text-transform: capitalize;
+   margin-left:40%;
+   margin-bottom: 16rem;
 }
 
 .disabled{
@@ -164,12 +164,29 @@ section{
       transform: translateY(1rem);
    }
 }
+.noor{
+   margin-left: 25%;
+   margin-bottom:10px;
+}
+.noor1{
+   margin-left: 22%; 
+}
+span .fa-solid{
+   font-size: 5rem;
+   margin-right: 20rem;
+   color:#117693
+}
+.huda1{
+   font-size: 2rem;
+   margin-right: 10rem;
+   color:black;
+}
 
 .header{
    position: sticky;
    top:0; left:0; right:0;
-   background-color:#117693;
    box-shadow: var(--box-shadow);
+   background-color:#117693;
    z-index: 1000;
    
 }
@@ -246,13 +263,14 @@ section{
 
 #menu-btn{
    display: none;
+   
 }
 
 .home-bg{
    background:url(../images/home-bg.jpg) no-repeat;
    background-size: cover;
    background-position: center;
-   height: 500px;
+   height: 700px;
    margin-top: -5px;
 }
 
@@ -279,16 +297,19 @@ section{
 .home-bg .home .slide .content{
    flex:1 1 40rem;
 }
-
+.navbar a{
+   /* justify-content: center; */
+   padding:0px;
+}
 .home-bg .home .slide .content span{
    font-size: 2rem;
-   color:var(--white);
+   color:#117693;
 }
 
 .home-bg .home .slide .content h3{
    margin-top: 1rem;
    font-size: 4rem;
-   color:var(--white);
+   color:#117693;
    text-transform: uppercase;
 }
 
@@ -298,7 +319,7 @@ section{
 }
 
 .swiper-pagination-bullet-active{
-   background-color: var(--main-color);
+   background-color: var(--white);
 }
 .category{
    margin-top: 50px;

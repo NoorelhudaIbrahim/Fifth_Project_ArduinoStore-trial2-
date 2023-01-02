@@ -33,7 +33,7 @@ if(isset($_SESSION['user_id'])){
 
 <section class="orders">
 
-   <h1 class="heading">placed orders</h1>
+   <h1 class="heading" style="margin-top:30px;">placed orders</h1>
 
    <div class="box-container">
 

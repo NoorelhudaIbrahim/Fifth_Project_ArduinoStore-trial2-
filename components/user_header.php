@@ -11,8 +11,8 @@
    }
 ?>
 
-
-<header class="header ">
+<!-- 
+<header class="header " style="background-color:#117693;">
 
 <style>
    .navbar a{
@@ -20,7 +20,7 @@
       padding:50px;
    }
  
-</style>
+</style> -->
 <header class="header">
 
 

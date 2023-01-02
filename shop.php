@@ -35,7 +35,7 @@ include 'components/wishlist_cart.php';
 
 <section class="products">
 
-   <h1 class="heading">latest products</h1>
+   <h1 class="heading" style="margin-top:30px;"> Products</h1>
 
    <div class="box-container">
 
@@ -45,6 +45,7 @@ include 'components/wishlist_cart.php';
      if($select_products->rowCount() > 0){
       while($fetch_product = $select_products->fetch(PDO::FETCH_ASSOC)){
    ?>
+   
    <form action="" method="post" class="box">
       <input type="hidden" name="pid" value="<?= $fetch_product['id']; ?>">
       <input type="hidden" name="name" value="<?= $fetch_product['name']; ?>">
