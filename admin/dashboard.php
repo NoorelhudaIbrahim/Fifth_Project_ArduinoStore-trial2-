@@ -60,7 +60,7 @@ if(!isset($admin_id)){
          ?>
          <h3><?= $number_of_admins; ?></h3>
          <p>category</p>
-         <a href="category.php" class="btn">Update category</a>
+         <a href="category.php" class="btn">see category</a>
       </div>
 
       <div class="box">
@@ -136,7 +136,7 @@ if(!isset($admin_id)){
          ?>
          <h3><?= $number_of_messages; ?></h3>
          <p>new messages</p>
-         <a href="messagess.php" class="btn">see messages</a>
+         <a href="../admin/messages.php" class="btn">see messages</a>
       </div>
 
    </div>
