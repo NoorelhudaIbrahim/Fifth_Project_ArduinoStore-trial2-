@@ -23,21 +23,21 @@ if(isset($_POST['update'])){
 
    $message[] = 'category updated successfully!';
 
-   $old_image_01 = $_POST['old_image_01'];
-   $image_01 = $_FILES['image_01']['name'];
-   $image_01 = filter_var($image_01, FILTER_SANITIZE_STRING);
-   $image_size_01 = $_FILES['image_01']['size'];
-   $image_tmp_name_01 = $_FILES['image_01']['tmp_name'];
-   $image_folder_01 = '../uploaded_img/'.$image_01;
+   $old_cat_01 = $_POST['old_cat_01'];
+   $cat_01 = $_FILES['cat_01']['name'];
+   $cat_01 = filter_var($cat_01, FILTER_SANITIZE_STRING);
+   $image_size_01 = $_FILES['cat_01']['size'];
+   $image_tmp_name_01 = $_FILES['cat_01']['tmp_name'];
+   $image_folder_01 = '../uploaded_img/'.$cat_01;
 
-   if(!empty($image_01)){
+   if(!empty($cat_01)){
       if($image_size_01 > 2000000){
          $message[] = 'image size is too large!';
       }else{
-         $update_image_01 = $conn->prepare("UPDATE `category` SET image_01 = ? WHERE id = ?");
-         $update_image_01->execute([$image_01, $pid]);
+         $update_cat_01 = $conn->prepare("UPDATE `category` SET ategory_imge = ? WHERE category_id = ?");
+         $update_cat_01->execute([$cat_01, $pid]);
          move_uploaded_file($image_tmp_name_01, $image_folder_01);
-         unlink('../uploaded_img/'.$old_image_01);
+         unlink('../uploaded_img/'.$old_cat_01);
          $message[] = 'image 01 updated successfully!';
       }
    }
@@ -76,18 +76,11 @@ if(isset($_POST['update'])){
    ?>
    <form action="" method="post" enctype="multipart/form-data">
       <input type="hidden" name="pid" value="<?= $fetch_category['category_id']; ?>">
-      <input type="hidden" name="old_image_01" value="<?= $fetch_category['category_imge']; ?>">
-      <div class="image-container">
-         <div class="main-image">
-            <img src="../uploaded_img/<?= $fetch_category['category_imge']; ?>" alt="">
-         </div>
-      </div>
       <span>Category Name</span>
       <input type="text" name="name" required class="box" maxlength="100" placeholder="enter category name" value="<?= $fetch_category['category_name']; ?>">
       <span>Category Description</span>
-      <textarea name="details" class="box" required cols="30" rows="10"><?= $fetch_category['category_description']; ?></textarea>
+      <textarea name="details" class="box" required cols="30" rows="30"><?= $fetch_category['category_description']; ?></textarea>
       <span>update image</span>
-      <input type="file" name="image_01" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
       <div class="flex-btn">
          <input type="submit" name="update" class="btn" value="update">
          <a href="category.php" class="option-btn">go back</a>
