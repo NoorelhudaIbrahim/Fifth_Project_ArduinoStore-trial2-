@@ -36,91 +36,104 @@ include 'components/wishlist_cart.php';
       .home-bg{
          background-image:none;  
       }
-      .home  span , h3{
-         color:black !important;
-      }
-      body{
-         background-image:url('project images/overlay_style1_mobile.png');
+
+      .swiper-slide{
+         background-image:url('project images/Untitled__8_-removebg-preview.png');
          background-repeat: no-repeat;
          background-size: 70%;
       }
          
-         .footer{
-            background:linear-gradient(
-               to right,
-               rgb(133 11 163),
-               rgb(180 76 99),
-               rgb(157 60 41 / 51%)
-            )     ;
-         
-         }
+      .imge_hoda_noor{
+         background-image:url('images/bg33.jpg') !important;   
+         background-size: 115.5%;
+         background-repeat: no-repeat;
+         /* height: 150% !important; */
+      }
 
-         .footer a {
-            color:white !important;
-         }
-         .footer h3 {
-            color:rgb(250 240 240) !important
-         }
+      .sale {
+         padding:230px 100px 30px 20px;
+      }
 
-         .footer .fab , .fas{
-            color:white !important ;
-         }
+      .sale2{
+         padding:50px 0px 30px 200px;
+      }
+
+      span , h3{
+         color: #165168 !important;
+      }
+      .swiper-pagination-bullet{
+         background-color:#165168 !important;
+      }
+
+      .btn{
+        
+         background-image: linear-gradient(to bottom, #165168, #76A5B2);
+         color:white;
+      }
 
    </style>
 
 </head>
-<body><!--style="background-image: url('images/bg2.jpg'); background-size:cover; "-->
-   
+<body>
+
 <?php include 'components/user_header.php'; ?>
 
 <div class="home-bg">
 
-<section class="home">
+   <section class="home">
 
-   <div class="swiper home-slider">
-   
-   <div class="swiper-wrapper">
+      <div class="swiper home-slider">
+      
+         <div class="swiper-wrapper">
 
-      <div class="swiper-slide slide">
-         <div class="image">
-            <img src="images/1.png" alt="">
+            <div class="swiper-slide slide imge_hoda_noor">
+               <div class="content sale">
+                  <span>up to 50% off</span>
+                  <h3>Discover <br>the power of AI</h3>
+                  <a href="shop.php" class="btn">shop now</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <img src="images/1.png" alt="">
+               </div>
+               <div class="content sale2">
+                  <span>up to 50% off</span>
+                  <h3>Discover <br> the power of AI</h3>
+                  <a href="shop.php" class="btn">shop now</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <img src="images/2.png" alt="0">
+               </div>
+               <div class="content sale2">
+                  <span>up to 50% off</span>
+                  <h3>AI is going to change the world!</h3>
+                  <a href="shop.php" class="btn">shop now</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <div class="image">
+                  <img src="images/3.png" alt="">
+               </div>
+               <div class="content sale2">
+                  <span>upto 50% off</span>
+                  <h3>From human to machine and back again!</h3>
+                  <a href="shop.php" class="btn">shop now</a>
+               </div>
+            </div>
+
          </div>
-         <div class="content">
-            <span>up to 50% off</span>
-            <h3>Discover the power of AI</h3>
-            <a href="shop.php" class="btn">shop now</a>
-         </div>
+
+         <div class="swiper-pagination"></div>
+
       </div>
 
-      <div class="swiper-slide slide">
-         <div class="image">
-            <img src="images/2.png" alt="0">
-         </div>
-         <div class="content">
-            <span>up to 50% off</span>
-            <h3>AI is going to change the world!</h3>
-            <a href="shop.php" class="btn">shop now</a>
-         </div>
-      </div>
-
-      <div class="swiper-slide slide">
-         <div class="image">
-            <img src="images/3.png" alt="">
-         </div>
-         <div class="content">
-            <span>upto 50% off</span>
-            <h3>From human to machine and back again!</h3>
-            <a href="shop.php" class="btn">shop now</a>
-         </div>
-      </div>
-
-   </div>
-
-      <div class="swiper-pagination"></div>
-
-   </div>
-
-</section>
+   </section>
 
 </div>
 <div >
