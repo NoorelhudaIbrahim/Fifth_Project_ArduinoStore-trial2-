@@ -73,6 +73,7 @@ include 'components/wishlist_cart.php';
          background-image: linear-gradient(to bottom, #165168, #76A5B2);
          color:white;
       }
+      
 
    </style>
 

@@ -63,6 +63,70 @@ if(isset($_POST['submit'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
+   <style>
+       body{
+            background-image: url("project images/Untitled__5_-removebg-preview.png");
+            background-repeat: no-repeat;
+            background-size: 63%;
+         }
+         input{
+            background-color: none !important;
+         }
+         .btn_login_now , .option-btn{
+            background-color: #165168 !important;   
+            color: white;
+         }
+
+         .btn_login_now:hover{
+            background-color:white !important;
+            color: #165168 !important;
+            border: 1px #165168 solid !important;
+         }
+
+         .option-btn:hover{
+            background-color:white !important;
+            color: #165168 !important;
+            border: 1px #165168 solid !important;
+
+         }
+         
+         .btn-first-time{
+            color:black !important;
+            text-align: center;
+            font-size:15px !important;
+            margin-top:330px !important;
+            color:#165168 !important;
+         }
+         .btn-first-time:hover{
+            text-decoration:underline;
+            
+         }
+         
+         .form-container form{
+               padding:2rem;
+               text-align: center;
+               margin: 10px auto 55px auto;
+               margin-right:-150px;
+               max-width: 50rem;
+         }
+
+         
+         form h3{
+            position:absolute !important;
+            left:60px !important;
+            top:15pc !important;
+            margin-bottom : 30px;
+            font-size:55px !important;
+            color:white !important;
+            
+         }
+
+         h3{
+            margin-bottom : 30px;
+         }
+
+
+   </style>
 </head>
 <body>
    
@@ -78,7 +142,7 @@ if(isset($_POST['submit'])){
       <input type="password" name="old_pass" placeholder="enter your old password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="new_pass" placeholder="enter your new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="cpass" placeholder="confirm your new password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="update now" class="btn" name="submit">
+      <input type="submit" value="update now" class="btn btn_login_now" name="submit">
    </form>
 
 </section>
