@@ -54,6 +54,71 @@ if(isset($_POST['send'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
+   <style>
+         body{
+               background-image: url("project images/Untitled__5_-removebg-preview.png");
+               background-repeat: no-repeat;
+               background-size: 65%;
+            }
+            input{
+               background-color: none !important;
+            }
+            .btn_login_now , .option-btn{
+               background-color: #165168 !important;   
+               color: white;
+            }
+
+            .btn_login_now:hover{
+               background-color:white !important;
+               color: #165168 !important;
+               border: 1px #165168 solid !important;
+            }
+
+            .option-btn:hover{
+               background-color:white !important;
+               color: #165168 !important;
+               border: 1px #165168 solid !important;
+
+            }
+            
+            .btn-first-time{
+               color:black !important;
+               text-align: center;
+               font-size:15px !important;
+               margin-top:330px !important;
+               color:#165168 !important;
+            }
+            .btn-first-time:hover{
+               text-decoration:underline;
+               
+            }
+            
+            .contact form{
+                  padding:2rem;
+                  text-align: center;
+                  margin: 10px auto 55px auto;
+                  margin-right:-150px;
+                  max-width: 50rem;
+            }
+
+            
+            form h3{
+               position:absolute !important;
+               left:60px !important;
+               top:15pc !important;
+               margin-bottom : 30px;
+               font-size:55px !important;
+               color:white !important;
+               
+            }
+
+            h3{
+               margin-bottom : 30px;
+            }
+
+
+   </style>
+      
 </head>
 <body>
    
@@ -67,7 +132,7 @@ if(isset($_POST['send'])){
       <input type="email" name="email" placeholder="enter your email" required maxlength="50" class="box">
       <input type="number" name="number" min="0" max="9999999999" placeholder="enter your number" required onkeypress="if(this.value.length == 10) return false;" class="box">
       <textarea name="msg" class="box" placeholder="enter your message" cols="30" rows="10"></textarea>
-      <input type="submit" value="send message" name="send" class="btn">
+      <input type="submit" value="send message" name="send" class="btn btn_login_now">
    </form>
 
 </section>

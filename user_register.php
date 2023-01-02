@@ -57,25 +57,33 @@ if(isset($_POST['submit'])){
 
    <style>
          body{
-            background-image: url("project images/Site-vitrine.png");
+            background-image: url("project images/Untitled__5_-removebg-preview.png");
             background-repeat: no-repeat;
-            background-size: 63%;
+            background-size: 59%;
          }
          input{
             background-color: none !important;
          }
          .btn_login_now , .option-btn{
-            background-color: rgb(180 76 99);
+            background-color: #165168 !important;   
             color: white;
          }
-         
+
+         .option-btn:hover{
+            background-color:white !important;
+            color: #165168 !important;
+            border: 1px #165168 solid !important;
+
+         }
+
+         .btn_login_now:hover{
+            background-color:white !important;
+            color: #165168 !important;
+            border: 1px #165168 solid !important;
+         }
          .footer{
-            background:linear-gradient(
-               to right,
-               rgb(133 11 163),
-               rgb(180 76 99),
-               rgb(157 60 41 / 51%)
-            )     ;
+            background-color: #165168 !important;
+
          
          }
          .footer a {
@@ -106,7 +114,18 @@ if(isset($_POST['submit'])){
          .footer .fab , .fas{
             color:white !important ;
          }
-
+  
+         .btn-first-time{
+            color:black !important;
+            text-align: center;
+            font-size:15px !important;
+            margin-top:330px !important;
+            color:#165168 !important;
+         }
+         .btn-first-time:hover{
+            text-decoration:underline;
+            
+         }
 
    </style>
 
@@ -124,8 +143,8 @@ if(isset($_POST['submit'])){
       <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="cpass" required placeholder="confirm your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="submit" value="register now" class="btn btn_login_now" name="submit">
-      <p>already have an account?</p>
-      <a href="user_login.php" class="option-btn">login now</a>
+      <div><pre> </pre></div>
+      <a href="user_login.php" class="btn-first-time">already have an account?</a>
    </form>
 
 </section>
