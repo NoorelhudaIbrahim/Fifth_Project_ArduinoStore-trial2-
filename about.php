@@ -40,7 +40,7 @@ if(isset($_SESSION['user_id'])){
 <?php include 'components/user_header.php'; ?>
   
    <div> 
-      <video src="https://www.datocms-assets.com/76605/1668676208-banner-handbrake.webm" width="100%"  muted autoplay></video>
+      <video src="https://www.datocms-assets.com/76605/1668676208-banner-handbrake.webm" width="100%" muted autoplay></video>
    </div>
 
 <section class="about">
@@ -48,16 +48,16 @@ if(isset($_SESSION['user_id'])){
 
    <div class="row">
       <div class="content">
-         <h3>What is Arduino?</h3>
+         <h3 style="color:#117693;">What is Arduino?</h3>
          <p>Arduino designs, manufactures, and supports electronic devices and software, allowing people around the world to easily access advanced technologies that interact with the physical world. Our products are straightforward, simple, and powerful, ready to satisfy users’ needs from students to makers and all the way to professional developers.</p>
-         <h3>Our Mission & Vision</h3>
+         <h3 style="color:#117693;">Our Mission & Vision</h3>
             <p>Arduino’s mission is to enable anyone to enhance their lives through accessible electronics and digital technologies. There was once a barrier between the electronics, design, and programming world and the rest of the world. Arduino has broken down that barrier.
 
-            Over the years, our products have been the brains behind thousands of projects, from everyday objects to complex scientific instruments. A worldwide community, comprising students, hobbyists, artists, programmers, and professionals, has gathered around this open-source platform, their contributions adding up to an incredible amount of accessible knowledge.
+            Over the years, Arduino products have been the brains behind thousands of projects, from everyday objects to complex scientific instruments. A worldwide community, comprising students, hobbyists, artists, programmers, and professionals, has gathered around this open-source platform, their contributions adding up to an incredible amount of accessible knowledge.
 
-            Our vision is to make Arduino available to everyone, whether you are a student, maker or professional, which is why we now have three segments to our business. These segments work together as an ecosystem with a shared mindset: we started with Maker, and that has evolved into Education and PRO solutions.</p>
+          </p>
 
-         <a href="contact.php" class="btn" >Contact </a>
+         <a href="contact.php" class="btn" style="background-color:#117693;">Contact us </a>
 
       </div>
 

@@ -41,6 +41,7 @@ include 'components/wishlist_cart.php';
          background-image:url('project images/Untitled__8_-removebg-preview.png');
          background-repeat: no-repeat;
          background-size: 70%;
+         height:50em;
       }
          
       .imge_hoda_noor{
@@ -49,8 +50,23 @@ include 'components/wishlist_cart.php';
          background-repeat: no-repeat;
          /* height: 150% !important; */
       }
-
+      .img1{
+         background-image:url('images/ai.png') !important;
+         background-size: 130%;
+         background-repeat: no-repeat;
+      }
+      .img2{
+         background-image:url('images/learning.jpg') !important;
+         background-size: 130%;
+         background-repeat: no-repeat;
+      }
+      .img3{
+         background-image:url('images/33.jpeg') !important;
+         background-size: 130%;
+         background-repeat: no-repeat;
+      }
       .sale {
+         margin-left :20px;
          padding:230px 100px 30px 20px;
       }
 
@@ -58,20 +74,15 @@ include 'components/wishlist_cart.php';
          padding:50px 0px 30px 200px;
       }
 
-      span , h3{
-         color: #165168 !important;
-         background: -webkit-linear-gradient(#165168,#165168, #76A5B2); 
-         -webkit-background-clip: text;
-         -webkit-text-fill-color: transparent;
-      }
+    
       .swiper-pagination-bullet{
-         background-color:#165168 !important;
+         background-color:white;
       }
 
       .btn{
         
-         background-image: linear-gradient(to bottom, #165168, #76A5B2);
-         color:white;
+         background-color:#117693;
+
       }
       
 
@@ -84,7 +95,7 @@ include 'components/wishlist_cart.php';
 
 <div class="home-bg">
 
-   <section class="home">
+   <div class="home">
 
       <div class="swiper home-slider">
       
@@ -98,36 +109,37 @@ include 'components/wishlist_cart.php';
                </div>
             </div>
 
-            <div class="swiper-slide slide">
-               <div class="image">
+            <div class="swiper-slide slide img1">
+               <!-- <div class="image">
                   <img src="images/1.png" alt="">
-               </div>
-               <div class="content sale2">
-                  <span>up to 50% off</span>
-                  <h3>Discover <br> the power of AI</h3>
+               </div> -->
+               <div class="content sale2" style="margin-left:41%; margin-top:10%;">
+                  <span style="color:white;">up to 50% off</span>
+                  <h3 style="color:white;">Discover <br> the power of AI</h3>
                   <a href="shop.php" class="btn">shop now</a>
                </div>
             </div>
 
-            <div class="swiper-slide slide">
-               <div class="image">
-                  <img src="images/2.png" alt="0">
-               </div>
-               <div class="content sale2">
-                  <span>up to 50% off</span>
-                  <h3>AI is going to change the world!</h3>
-                  <a href="shop.php" class="btn">shop now</a>
+            <div class="swiper-slide slide img2">
+               <!-- <div class="image">
+                  <img src="images/from-human.png" alt="0">
+               </div> -->
+               <div class="content sale2" style="margin-left:-13rem; ">
+                  <span style="color:#103848;">up to 50% off</span>
+                  <h3 style="color:#103848;">AI is going to <br>change the world!</h3>
+                  <a href="shop.php" class="btn" style="background-color:#103848;">shop now</a>
                </div>
             </div>
 
-            <div class="swiper-slide slide">
-               <div class="image">
-                  <img src="images/3.png" alt="">
-               </div>
-               <div class="content sale2">
-                  <span>upto 50% off</span>
-                  <h3>From human to machine and back again!</h3>
-                  <a href="shop.php" class="btn">shop now</a>
+            <div class="swiper-slide slide img3">
+               <!-- <div class="image">
+                  <img src="images/to-machine.png" alt="">
+               </div> -->
+               <div class="content sale2" style="margin-left:-13rem;">
+
+                  <span style="color:white;">upto 50% off</span>
+                  <h3 style="color:white;">From human to machine <br>and back again!</h3>
+                  <a href="shop.php" class="btn" style="background-color:white;color:#103848;">shop now</a>
                </div>
             </div>
 
@@ -245,10 +257,23 @@ include 'components/wishlist_cart.php';
 </div>
 
 </section>
+<section >
+<div class="noor">
+   <span><i class="fa-solid fa-user-shield"></i></span>
+  
+   <span><i class="fa-solid fa-truck-fast"></i></span>
+   
+   <span><i class="fa-solid fa-screwdriver-wrench"></i></span>
+   
+   
+</div>
+<div class="noor1">
+   <span class="huda1">Secure payments</span>
+   <span class="huda1"> worldwide delivery</span>
+   <span class="huda1">Excellent service</span>
+</div>
 
-
-
-
+</section>
 
 
 
