@@ -21,8 +21,6 @@ if(isset($_POST['submit'])){
    $cpass = sha1($_POST['cpass']);
    $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
 
-
-
    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
    $select_user->execute([$email,]);
    $row = $select_user->fetch(PDO::FETCH_ASSOC);
@@ -57,6 +55,61 @@ if(isset($_POST['submit'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
+   <style>
+         body{
+            background-image: url("project images/Site-vitrine.png");
+            background-repeat: no-repeat;
+            background-size: 63%;
+         }
+         input{
+            background-color: none !important;
+         }
+         .btn_login_now , .option-btn{
+            background-color: rgb(180 76 99);
+            color: white;
+         }
+         
+         .footer{
+            background:linear-gradient(
+               to right,
+               rgb(133 11 163),
+               rgb(180 76 99),
+               rgb(157 60 41 / 51%)
+            )     ;
+         
+         }
+         .footer a {
+            color:white !important;
+         }
+         .footer h3 {
+            color:rgb(250 240 240) !important
+         }
+
+         form h3{
+            position:absolute !important;
+            left:60px !important;
+            top:16pc !important;
+            margin-bottom : 30px;
+            font-size:60px !important;
+            color:white !important;
+            
+         }
+         
+         .form-container form{
+               padding:2rem;
+               text-align: center;
+               margin: 10px auto 55px auto;
+               margin-right:-150px;
+               max-width: 50rem;
+         }
+
+         .footer .fab , .fas{
+            color:white !important ;
+         }
+
+
+   </style>
+
 </head>
 <body>
    
@@ -70,7 +123,7 @@ if(isset($_POST['submit'])){
       <input type="email" name="email" required placeholder="enter your email" maxlength="50"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="cpass" required placeholder="confirm your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="register now" class="btn" name="submit">
+      <input type="submit" value="register now" class="btn btn_login_now" name="submit">
       <p>already have an account?</p>
       <a href="user_login.php" class="option-btn">login now</a>
    </form>

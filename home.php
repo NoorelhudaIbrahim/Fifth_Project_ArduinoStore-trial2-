@@ -32,9 +32,44 @@ include 'components/wishlist_cart.php';
    
    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Seymour+One&display=swap" rel="stylesheet">
    
+   <style>
+      .home-bg{
+         background-image:none;  
+      }
+      .home  span , h3{
+         color:black !important;
+      }
+      body{
+         background-image:url('project images/overlay_style1_mobile.png');
+         background-repeat: no-repeat;
+         background-size: 70%;
+      }
+         
+         .footer{
+            background:linear-gradient(
+               to right,
+               rgb(133 11 163),
+               rgb(180 76 99),
+               rgb(157 60 41 / 51%)
+            )     ;
+         
+         }
+
+         .footer a {
+            color:white !important;
+         }
+         .footer h3 {
+            color:rgb(250 240 240) !important
+         }
+
+         .footer .fab , .fas{
+            color:white !important ;
+         }
+
+   </style>
 
 </head>
-<body style="background-image: url('images/bg2.jpg'); background-size:cover; ">
+<body><!--style="background-image: url('images/bg2.jpg'); background-size:cover; "-->
    
 <?php include 'components/user_header.php'; ?>
 
