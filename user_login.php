@@ -46,51 +46,67 @@ if(isset($_POST['submit'])){
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
    <style>
-         body{
-            background-image: url("project images/Site-vitrine.png");
+       body{
+            background-image: url("project images/Untitled__5_-removebg-preview.png");
             background-repeat: no-repeat;
-            background-size: 50%;
+            background-size: 53%;
          }
          input{
             background-color: none !important;
          }
          .btn_login_now , .option-btn{
-            background-color: rgb(180 76 99);
+            background-color: #165168 !important;   
             color: white;
          }
-         
-         .footer{
-            background:linear-gradient(
-               to right,
-               rgb(133 11 163),
-               rgb(180 76 99),
-               rgb(157 60 41 / 51%)
-            )     ;
-         
+
+         .btn_login_now:hover{
+            background-color:white !important;
+            color: #165168 !important;
+            border: 1px #165168 solid !important;
          }
+
+         .option-btn:hover{
+            background-color:white !important;
+            color: #165168 !important;
+            border: 1px #165168 solid !important;
+
+         }
+         
+         .btn-first-time{
+            color:black !important;
+            text-align: center;
+            font-size:15px !important;
+            margin-top:330px !important;
+            color:#165168 !important;
+         }
+         .btn-first-time:hover{
+            text-decoration:underline;
+            
+         }
+         
+         .form-container form{
+               padding:2rem;
+               text-align: center;
+               margin: 10px auto 55px auto;
+               margin-right:-150px;
+               max-width: 50rem;
+         }
+
+         
          form h3{
             position:absolute !important;
             left:60px !important;
             top:15pc !important;
             margin-bottom : 30px;
-            font-size:60px !important;
+            font-size:55px !important;
             color:white !important;
             
-         }
-         .footer a {
-            color:white !important;
-         }
-         .footer h3 {
-            color:rgb(250 240 240) !important
          }
 
          h3{
             margin-bottom : 30px;
          }
 
-         .footer .fab , .fas{
-            color:white !important ;
-         }
 
    </style>
 </head>
@@ -105,11 +121,16 @@ if(isset($_POST['submit'])){
       <input type="email" name="email" required placeholder="enter your email" maxlength="50"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="submit" value="login now" class="btn btn_login_now" name="submit">
-      <p>don't have an account?</p>
-      <a href="user_register.php" class="option-btn">register now</a>
+      <div><pre> </pre></div>
+      <a href="user_register.php" class="btn-first-time">REGISTER NOW</a>
    </form>
 
 </section>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <?php include 'components/footer.php'; ?>
 

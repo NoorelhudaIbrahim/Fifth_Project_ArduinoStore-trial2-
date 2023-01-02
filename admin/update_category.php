@@ -12,35 +12,36 @@ if(!isset($admin_id)){
 
 if(isset($_POST['update'])){
 
-   $pid = $_POST['pid'];
-   $name = $_POST['name'];
-   $name = filter_var($name, FILTER_SANITIZE_STRING);
-   $details = $_POST['details'];
-   $details = filter_var($details, FILTER_SANITIZE_STRING);
+      $pid = $_POST['pid'];
+      $name = $_POST['name'];
+      $name = filter_var($name, FILTER_SANITIZE_STRING);
+      $details = $_POST['details'];
+      $details = filter_var($details, FILTER_SANITIZE_STRING);
 
-   $update_category = $conn->prepare("UPDATE `category` SET category_name = ?, category_description = ? WHERE category_id = ?");
-   $update_category->execute([$name, $details, $pid]);
+      $update_category = $conn->prepare("UPDATE `category` SET category_name = ?, category_description = ? WHERE category_id = ?");
+      $update_category->execute([$name, $details, $pid]);
 
-   $message[] = 'category updated successfully!';
+      header("Location:category.php");
+//    $message[] = 'category updated successfully!';
 
-   $old_cat_01 = $_POST['old_cat_01'];
-   $cat_01 = $_FILES['cat_01']['name'];
-   $cat_01 = filter_var($cat_01, FILTER_SANITIZE_STRING);
-   $image_size_01 = $_FILES['cat_01']['size'];
-   $image_tmp_name_01 = $_FILES['cat_01']['tmp_name'];
-   $image_folder_01 = '../uploaded_img/'.$cat_01;
+//    $old_cat_01 = $_POST['old_cat_01'];
+//    $cat_01 = $_FILES['cat_01']['name'];
+//    $cat_01 = filter_var($cat_01, FILTER_SANITIZE_STRING);
+//    $image_size_01 = $_FILES['cat_01']['size'];
+//    $image_tmp_name_01 = $_FILES['cat_01']['tmp_name'];
+//    $image_folder_01 = '../uploaded_img/'.$cat_01;
 
-   if(!empty($cat_01)){
-      if($image_size_01 > 2000000){
-         $message[] = 'image size is too large!';
-      }else{
-         $update_cat_01 = $conn->prepare("UPDATE `category` SET ategory_imge = ? WHERE category_id = ?");
-         $update_cat_01->execute([$cat_01, $pid]);
-         move_uploaded_file($image_tmp_name_01, $image_folder_01);
-         unlink('../uploaded_img/'.$old_cat_01);
-         $message[] = 'image 01 updated successfully!';
-      }
-   }
+//    if(!empty($cat_01)){
+//       if($image_size_01 > 2000000){
+//          $message[] = 'image size is too large!';
+//       }else{
+//          $update_cat_01 = $conn->prepare("UPDATE `category` SET ategory_imge = ? WHERE category_id = ?");
+//          $update_cat_01->execute([$cat_01, $pid]);
+//          move_uploaded_file($image_tmp_name_01, $image_folder_01);
+//          unlink('../uploaded_img/'.$old_cat_01);
+//          $message[] = 'image 01 updated successfully!';
+//       }
+//    }
 
 }
 
@@ -83,7 +84,6 @@ if(isset($_POST['update'])){
       <span>update image</span>
       <div class="flex-btn">
          <input type="submit" name="update" class="btn" value="update">
-         <a href="category.php" class="option-btn">go back</a>
       </div>
    </form>
    
@@ -95,8 +95,6 @@ if(isset($_POST['update'])){
    ?>
 
 </section>
-
-
 
 
 

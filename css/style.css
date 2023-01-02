@@ -88,7 +88,10 @@ section{
 .btn:hover,
 .delete-btn:hover,
 .option-btn:hover{
-   background-color: var(--black);
+   background-color:white;
+   color: #165168;
+   border: 1px #165168 solid;
+
 }
 
 .btn{
@@ -97,7 +100,7 @@ section{
 }
 
 .option-btn{
-   background-color: var(--orange);
+   background-color: #165168;
 }
 
 .delete-btn{
@@ -235,8 +238,8 @@ section{
 
 .header .flex .profile p{
    text-align: center;
-   color:var(--black);
-   font-size: 2rem;
+   color:#165168;
+   font-size: 1.5rem;
    margin-bottom: 1rem;
 }
 
@@ -485,9 +488,9 @@ section{
 }
 
 .quick-view form .row .flex{
-   display: flex;
+   /* display: flex;
    align-items: center;
-   justify-content: space-between;
+   justify-content: space-between; */
    gap:1rem;
    margin:0rem 0;
 }
@@ -603,13 +606,14 @@ section{
 }
 
 .form-container form{
-   background-color: var(--white);
+   /* background-color: #00000042; */
    padding:2rem;
-   border-radius: .5rem;
-   border:var(--border);
-   box-shadow: var(--box-shadow);
+   /* border-radius: .5rem; */
+   /* border:var(--border); */
+   /* box-shadow: var(--box-shadow); */
    text-align: center;
-   margin:0 auto;
+   margin:30px auto ;
+   margin-right:10px;
    max-width: 50rem;
 }
 
@@ -621,18 +625,17 @@ section{
 
 .form-container form p{
    font-size: 2rem;
-   color:var(--light-color);
+   color:white;
    margin:1.5rem 0;
 }
 
 .form-container form .box{
    margin:1rem 0;
-   background-color: var(--light-bg);
    padding:1.4rem;
    font-size: 1.8rem;
    color:var(--black);  
    width: 100%;
-   border-radius: .5rem;
+   border-bottom: 1px black  solid !important;
 }
 
 .about .row{
@@ -719,9 +722,6 @@ section{
    padding:2rem;
    text-align: center;
    background-color: var(--white);
-   box-shadow: var(--box-shadow);
-   border-radius: .5rem;
-   border:var(--border);
    max-width: 50rem;
    margin:0 auto;
 }
@@ -735,12 +735,11 @@ section{
 
 .contact form .box{
    margin:1rem 0;
-   width: 100%;
-   background-color: var(--light-bg);
    padding:1.4rem;
    font-size: 1.8rem;
-   color:var(--black);
-   border-radius: .5rem;
+   color:var(--black);  
+   width: 100%;
+   border-bottom: 1px black  solid !important;
 }
 
 .contact form textarea{
@@ -952,8 +951,14 @@ section{
 }
 
 .footer{
-   background-color: var(--white);
-   /* padding-bottom: 7rem; */
+   background-color: #165168 !important;
+   position: relative;
+   bottom: 0px;
+   width: 100%;
+   padding: 1em;
+   padding-left: 10em;
+   margin-top: 3em;
+   
 }
 
 .footer .grid{
@@ -975,11 +980,20 @@ section{
    margin:1.5rem 0;
    font-size: 1.7rem;
    color:var(--light-color);
+   color:white !important ;
+}
+
+.footer h3 {
+   color:rgb(250 240 240) !important
+}
+
+.footer .fab , .fas{
+   color:white !important ;
 }
 
 .footer .grid .box a i{
    padding-right: 1rem;
-   color:var(--main-color);
+   color:white !important;
    transition: .2s linear;
 }
 

@@ -29,21 +29,41 @@ if(isset($_SESSION['user_id'])){
    <link rel="stylesheet" href="css/style.css">
 
 </head>
+<style>
+   .btn{
+      background-color:#165168;
+      color: #FFF;
+   }
+</style>
 <body>
    
 <?php include 'components/user_header.php'; ?>
+  
+   <div> 
+      <video src="https://www.datocms-assets.com/76605/1668676208-banner-handbrake.webm" width="100%" muted autoplay></video>
+   </div>
 
 <section class="about">
+ 
 
    <div class="row">
+      <div class="content">
+         <h3>What is Arduino?</h3>
+         <p>Arduino designs, manufactures, and supports electronic devices and software, allowing people around the world to easily access advanced technologies that interact with the physical world. Our products are straightforward, simple, and powerful, ready to satisfy users’ needs from students to makers and all the way to professional developers.</p>
+
+      </div>
+
+   </div>
+
+</section>
 
       <div class="image">
          <img src="images/about-img.svg" alt="">
       </div>
 
       <div class="content">
-         <h3>What is Arduino?</h3>
-         <p>Arduino designs, manufactures, and supports electronic devices and software, allowing people around the world to easily access advanced technologies that interact with the physical world. Our products are straightforward, simple, and powerful, ready to satisfy users’ needs from students to makers and all the way to professional developers.</p>
+         <h3>why choose us?</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam veritatis minus et similique doloribus? Harum molestias tenetur eaque illum quas? Obcaecati nulla in itaque modi magnam ipsa molestiae ullam consequuntur.</p>
          <a href="contact.php" class="btn">contact us</a>
       </div>
 
@@ -51,7 +71,11 @@ if(isset($_SESSION['user_id'])){
 
 </section>
 
-<section class="reviews">
+
+
+
+
+<!-- <section class="reviews">
    
    <h1 class="heading">client's reviews</h1>
 
@@ -143,7 +167,7 @@ if(isset($_SESSION['user_id'])){
 
    </div>
 
-</section>
+</section> -->
 
 
 
