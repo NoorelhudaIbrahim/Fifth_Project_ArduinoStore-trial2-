@@ -219,7 +219,10 @@ include 'components/wishlist_cart.php';
       <button class="fas fa-heart" type="submit" name="add_to_wishlist"></button>
       <a href="quick_view.php?pid=<?= $fetch_product['id']; ?>" class="fas fa-eye"></a>
       <img src="uploaded_img/<?= $fetch_product['image_01']; ?>" alt="">
-      <div class="name"><?= $fetch_product['name']; ?></div>
+      <div class="name"><?= $fetch_product['name']; ?><br>
+         <span style="color: #247580;"><?= $fetch_product['category']; ?></span>
+      </div>
+      <!-- <div class="category"></div> -->
       <div class="flex">
          <div class="price"><span>$</span><?= $fetch_product['price']; ?><span>/-</span></div>
          <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">

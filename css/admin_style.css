@@ -291,6 +291,7 @@ section{
 
 .dashboard .box-container .box h3 span{
    font-size: 2rem;
+   overflow: hidden;
 }
 
 .dashboard .box-container .box p{
@@ -300,6 +301,7 @@ section{
    font-size: 1.7rem;
    color:var(--light-color);
    margin:1rem 0;
+   overflow: hidden;
 }
 
 .add-products form{
@@ -379,6 +381,7 @@ section{
    font-size: 1.5rem;
    color:var(--light-color);
    line-height: 2;
+   overflow: hidden;
 }
 
 .add-category form{
@@ -454,10 +457,11 @@ section{
    margin:.5rem 0;
 }
 
-.show-category .box-container .box .details{
+.show-category .box-container .box .description{
    font-size: 1.5rem;
    color:var(--light-color);
    line-height: 2;
+   overflow: hidden;
 }
 
 .update-product form{
