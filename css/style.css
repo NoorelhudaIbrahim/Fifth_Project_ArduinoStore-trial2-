@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap'); 
 
 :root{
-   --main-color:#247580;
+   --main-color:#117693;
    --orange:#f39c12;
    --red:#e74c3c;
    --black:#333;
@@ -95,8 +95,8 @@ section{
 }
 
 .btn{
-   background-color: white;
-   color: black;
+   background-color: var(--main-color);
+   color: white;
 }
 
 .option-btn{
@@ -168,7 +168,7 @@ section{
 .header{
    position: sticky;
    top:0; left:0; right:0;
-   background-color: white;
+   background-color:#117693;
    box-shadow: var(--box-shadow);
    z-index: 1000;
    
@@ -195,11 +195,11 @@ section{
    margin:0 1rem;
    font-family: 'PT Serif', serif;
    font-size: 2rem;
-   color:var(--black);
+   color:var(--white);
 }
 
 .header .flex .navbar a:hover{
-   color:var(--main-color);
+   color:#B3B7C2;
    text-decoration: none;
 }
 
@@ -216,6 +216,7 @@ section{
 
 .header .flex .icons a span{
    font-size: 1.2rem;
+   color:#fff !important;
 }
 
 .header .flex .profile{
@@ -252,6 +253,7 @@ section{
    background-size: cover;
    background-position: center;
    height: 500px;
+   margin-top: -5px;
 }
 
 .home-bg .home .slide{
@@ -336,6 +338,10 @@ section{
    font-size: 2rem;
    color:var(--black);
    user-select: none;
+}
+.home-products{
+
+   margin-top:70px;
 }
 
 .home-products .slide{
@@ -591,8 +597,8 @@ section{
 }
 
 .products .box-container .box .flex .qty{
-   width: 7rem;
-   padding:1rem;
+   width: 5rem;
+   padding:0.5rem;
    border:var(--border);
    font-size: 1.8rem;
    color:var(--black);
@@ -638,11 +644,15 @@ section{
    border-bottom: 1px black  solid !important;
 }
 
+
 .about .row{
    display: flex;
    align-items: center;
    flex-wrap: wrap;
    gap:1.5rem;
+   text-align: center;
+   margin-top: 50px; 
+   
 }
 
 .about .row .image{
@@ -664,7 +674,7 @@ section{
 
 .about .row .content p{
    line-height: 2;
-   font-size: 1.5rem;
+   font-size: 2rem;
    color:var(--light-color);
    padding:1rem 0;
 }
@@ -938,7 +948,10 @@ section{
    box-shadow: var(--box-shadow);
    border-radius: .5rem;
 }
+.fas .fa-eye{
+   color:black;
 
+}
 .orders .box-container .box p{
    margin:.5rem 0;
    line-height: 1.8;
@@ -987,9 +1000,9 @@ section{
    color:rgb(250 240 240) !important
 }
 
-.footer .fab , .fas{
+/* .footer .fab , .fas{
    color:white !important ;
-}
+} */
 
 .footer .grid .box a i{
    padding-right: 1rem;
