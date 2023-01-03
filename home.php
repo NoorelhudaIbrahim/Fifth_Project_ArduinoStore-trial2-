@@ -233,7 +233,7 @@ include 'components/wishlist_cart.php';
       <a href="quick_view.php?pid=<?= $fetch_product['id']; ?>" class="fas fa-eye"></a>
       <img src="uploaded_img/<?= $fetch_product['image_01']; ?>" alt="">
       <div class="name"><?= $fetch_product['name']; ?><br>
-         <span style="color: #247580;"><?= $fetch_product['category']; ?></span>
+         <span style="color: #247580;"><?= $fetch_product['category_name']; ?></span>
       </div>
       <!-- <div class="category"></div> -->
       <div class="flex">

@@ -46,7 +46,7 @@ if(isset($_POST['add_product'])){
       $message[] = 'product name already exist!';
    }else{
 
-      $insert_products = $conn->prepare("INSERT INTO `products`( name, details, price, image_01, image_02, image_03, category) VALUES(?,?,?,?,?,?,?)");
+      $insert_products = $conn->prepare("INSERT INTO `products`( name, details, price, image_01, image_02, image_03, category_name) VALUES(?,?,?,?,?,?,?)");
       $insert_products->execute([ $name, $details, $price, $image_01, $image_02, $image_03, $cat]);
 
       if($insert_products){
@@ -168,7 +168,7 @@ if(isset($_GET['delete'])){
    <div class="box">
       <img src="../uploaded_img/<?= $fetch_products['image_01']; ?>" alt="">
       <div class="name"><?= $fetch_products['name']; ?><br>
-         <span style="color: #247580;"><?= $fetch_products['category']; ?></span>
+         <span style="color: #247580;"><?= $fetch_products['category_name']; ?></span>
       </div>
       <div class="price">$<span><?= $fetch_products['price']; ?></span>/-</div>
       <div class="details"><span><?= $fetch_products['details']; ?></span></div>
