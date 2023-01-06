@@ -41,7 +41,7 @@ include 'components/wishlist_cart.php';
          background-image:url('project images/Untitled__8_-removebg-preview.png');
          background-repeat: no-repeat;
          background-size: 70%;
-         height:50em;
+         /* height:50em; */
       }
          
       .imge_hoda_noor{
@@ -142,73 +142,45 @@ include 'components/wishlist_cart.php';
                   <a href="shop.php" class="btn" style="background-color:white;color:#103848;">shop now</a>
                </div>
             </div>
-
          </div>
-
          <div class="swiper-pagination"></div>
-
       </div>
-
    </section>
-
 </div>
-<div >
+<div>
 
-<!-- <section class="category" >
+            <!-- Add section Discount -->
+                         
+   <section class="category" >
 
    <h1 class="heading">shop by category</h1>
+
 
    <div class="swiper category-slider">
 
    <div class="swiper-wrapper">
 
-   <a href="category.php?category=laptop" class="swiper-slide slide">
-      <img src="images/icon-1.png" alt="">
-      <h3>laptop</h3>
+   <a href="category.php?category=Arduino" class="swiper-slide slide">
+      <img src="uploaded_img/Arduino nano-33-blesense.jpg" alt="">
+      <h3>Arduino</h3>
    </a>
 
    <a href="category.php?category=tv" class="swiper-slide slide">
       <img src="images/icon-2.png" alt="">
-      <h3>tv</h3>
+      <h3>Arduino1</h3>
    </a>
 
    <a href="category.php?category=camera" class="swiper-slide slide">
       <img src="images/icon-3.png" alt="">
-      <h3>camera</h3>
-   </a>
-
-   <a href="category.php?category=mouse" class="swiper-slide slide">
-      <img src="images/icon-4.png" alt="">
-      <h3>mouse</h3>
-   </a>
-
-   <a href="category.php?category=fridge" class="swiper-slide slide">
-      <img src="images/icon-5.png" alt="">
-      <h3>fridge</h3>
-   </a>
-
-   <a href="category.php?category=washing" class="swiper-slide slide">
-      <img src="images/icon-6.png" alt="">
-      <h3>washing machine</h3>
-   </a>
-
-   <a href="category.php?category=smartphone" class="swiper-slide slide">
-      <img src="images/icon-7.png" alt="">
-      <h3>smartphone</h3>
-   </a>
-
-   <a href="category.php?category=watch" class="swiper-slide slide">
-      <img src="images/icon-8.png" alt="">
-      <h3>watch</h3>
+      <h3>Arduino2</h3>
    </a>
 
    </div>
-
-   <div class="swiper-pagination"></div>
-
+       <div class="swiper-pagination"></div>
    </div>
 
-</section> -->
+
+</section>
 
 <section class="home-products">
 
@@ -219,7 +191,7 @@ include 'components/wishlist_cart.php';
    <div class="swiper-wrapper">
 
    <?php
-     $select_products = $conn->prepare("SELECT * FROM `products` LIMIT 6"); 
+     $select_products = $conn->prepare("SELECT * FROM `products` LIMIT 6 "); 
      $select_products->execute();
      if($select_products->rowCount() > 0){
       while($fetch_product = $select_products->fetch(PDO::FETCH_ASSOC)){
@@ -233,7 +205,7 @@ include 'components/wishlist_cart.php';
       <a href="quick_view.php?pid=<?= $fetch_product['id']; ?>" class="fas fa-eye"></a>
       <img src="uploaded_img/<?= $fetch_product['image_01']; ?>" alt="">
       <div class="name"><?= $fetch_product['name']; ?><br>
-         <span style="color: #247580;"><?= $fetch_product['category']; ?></span>
+         <span style="color: #247580;"><?= $fetch_product['category_name']; ?></span>
       </div>
       <!-- <div class="category"></div> -->
       <div class="flex">
@@ -242,6 +214,7 @@ include 'components/wishlist_cart.php';
       </div>
       <input type="submit" value="add to cart" class="btn" name="add_to_cart">
    </form>
+
    <?php
       }
    }else{
@@ -257,7 +230,10 @@ include 'components/wishlist_cart.php';
 </div>
 
 </section>
+
+
 <section >
+
 <div class="noor">
    <span><i class="fa-solid fa-user-shield"></i></span>
   
@@ -274,8 +250,6 @@ include 'components/wishlist_cart.php';
 </div>
 
 </section>
-
-
 
 
 

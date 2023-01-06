@@ -36,10 +36,7 @@ if(isset($_POST['submit'])){
          $message[] = 'registered successfully, login now please!';
       }
    }
-
 }
-
-
 ?>
 
 
@@ -150,17 +147,6 @@ if(isset($_POST['submit'])){
    </form>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
 
 
 <?php include 'components/footer.php'; ?>
