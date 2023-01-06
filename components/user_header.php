@@ -59,7 +59,7 @@
             $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
             $select_profile->execute([$user_id]);
             
-          //////////////////////////////////////////show  update profile / logout //////// -->
+          ///////////////////////////////////////show  update profile / logout //////// -->
 
             if(isset($_SESSION['user_id'])){
             // if($select_profile->rowCount() > 0){
@@ -82,7 +82,7 @@
          <p>please login or register first!</p>
          <div class="flex-btn">
             <a href="user_register.php" class="option-btn">register</a>
-            
+
             <a href="user_login.php" class="option-btn">login</a>
          </div>
 
