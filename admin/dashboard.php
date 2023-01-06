@@ -43,6 +43,31 @@ if(!isset($admin_id)){
 
       <div class="box">
          <?php
+<<<<<<< HEAD
+=======
+            $select_products = $conn->prepare("SELECT * FROM `products`");
+            $select_products->execute();
+            $number_of_products = $select_products->rowCount()
+         ?>
+         <h3><?= $number_of_products; ?></h3>
+         <p>products added</p>
+         <a href="products.php" class="btn">see products</a>
+      </div>
+
+      <div class="box">
+         <?php
+            $select_category = $conn->prepare("SELECT * FROM `category`");
+            $select_category->execute();
+            $number_of_category = $select_category->rowCount()
+         ?>
+         <h3><?= $number_of_category; ?></h3>
+         <p>category</p>
+         <a href="category.php" class="btn">see category</a>
+      </div>
+
+      <div class="box">
+         <?php
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
             $total_pendings = 0;
             $select_pendings = $conn->prepare("SELECT * FROM `orders` WHERE payment_status = ?");
             $select_pendings->execute(['pending']);
@@ -86,6 +111,7 @@ if(!isset($admin_id)){
 
       <div class="box">
          <?php
+<<<<<<< HEAD
             $select_products = $conn->prepare("SELECT * FROM `products`");
             $select_products->execute();
             $number_of_products = $select_products->rowCount()
@@ -97,6 +123,8 @@ if(!isset($admin_id)){
 
       <div class="box">
          <?php
+=======
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
             $select_users = $conn->prepare("SELECT * FROM `users`");
             $select_users->execute();
             $number_of_users = $select_users->rowCount()
@@ -125,7 +153,11 @@ if(!isset($admin_id)){
          ?>
          <h3><?= $number_of_messages; ?></h3>
          <p>new messages</p>
+<<<<<<< HEAD
          <a href="messagess.php" class="btn">see messages</a>
+=======
+         <a href="../admin/messages.php" class="btn">see messages</a>
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
       </div>
 
    </div>

@@ -82,6 +82,10 @@ if(isset($_POST['update'])){
       }
    }
 
+<<<<<<< HEAD
+=======
+   header("Location:products.php");
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
 }
 
 ?>
@@ -143,7 +147,10 @@ if(isset($_POST['update'])){
       <input type="file" name="image_03" accept="image/jpg, image/jpeg, image/png, image/webp" class="box">
       <div class="flex-btn">
          <input type="submit" name="update" class="btn" value="update">
+<<<<<<< HEAD
          <a href="products.php" class="option-btn">go back</a>
+=======
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
       </div>
    </form>
    

@@ -1,189 +1,171 @@
-<?php include('./header.php');?>
+<?php
 
-    <!-- Start Banner Area -->
-    <section class="banner-area organic-breadcrumb">
-        <div class="container">
-            <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
-                <div class="col-first">
-                    <h1>Checkout</h1>
-                    <nav class="d-flex align-items-center">
-                        <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-                        <a href="single-product.html">Checkout</a>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Banner Area -->
+include 'components/connect.php';
 
-    <!--================Checkout Area =================-->
-    <section class="checkout_area section_gap">
-        <div class="container">
-            <div class="returning_customer">
-                <div class="check_title">
-                    <h2>Returning Customer? <a href="#">Click here to login</a></h2>
-                </div>
-                <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new
-                    customer, please proceed to the Billing & Shipping section.</p>
-                <form class="row contact_form" action="#" method="post" novalidate="novalidate">
-                    <div class="col-md-6 form-group p_star">
-                        <input type="text" class="form-control" id="name" name="name">
-                        <span class="placeholder" data-placeholder="Username or Email"></span>
-                    </div>
-                    <div class="col-md-6 form-group p_star">
-                        <input type="password" class="form-control" id="password" name="password">
-                        <span class="placeholder" data-placeholder="Password"></span>
-                    </div>
-                    <div class="col-md-12 form-group">
-                        <button type="submit" value="submit" class="primary-btn">login</button>
-                        <div class="creat_account">
-                            <input type="checkbox" id="f-option" name="selector">
-                            <label for="f-option">Remember me</label>
-                        </div>
-                        <a class="lost_pass" href="#">Lost your password?</a>
-                    </div>
-                </form>
-            </div>
-            <div class="cupon_area">
-                <div class="check_title">
-                    <h2>Have a coupon? <a href="#">Click here to enter your code</a></h2>
-                </div>
-                <input type="text" placeholder="Enter coupon code">
-                <a class="tp_btn" href="#">Apply Coupon</a>
-            </div>
-            <div class="billing_details">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <h3>Billing Details</h3>
-                        <form class="row contact_form" action="#" method="post" novalidate="novalidate">
-                            <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="first" name="name">
-                                <span class="placeholder" data-placeholder="First name"></span>
-                            </div>
-                            <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="last" name="name">
-                                <span class="placeholder" data-placeholder="Last name"></span>
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="company" name="company" placeholder="Company name">
-                            </div>
-                            <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="number" name="number">
-                                <span class="placeholder" data-placeholder="Phone number"></span>
-                            </div>
-                            <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="email" name="compemailany">
-                                <span class="placeholder" data-placeholder="Email Address"></span>
-                            </div>
-                            <div class="col-md-12 form-group p_star">
-                                <select class="country_select">
-                                    <option value="1">Country</option>
-                                    <option value="2">Country</option>
-                                    <option value="4">Country</option>
-                                </select>
-                            </div>
-                            <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="add1" name="add1">
-                                <span class="placeholder" data-placeholder="Address line 01"></span>
-                            </div>
-                            <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="add2" name="add2">
-                                <span class="placeholder" data-placeholder="Address line 02"></span>
-                            </div>
-                            <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="city" name="city">
-                                <span class="placeholder" data-placeholder="Town/City"></span>
-                            </div>
-                            <div class="col-md-12 form-group p_star">
-                                <select class="country_select">
-                                    <option value="1">District</option>
-                                    <option value="2">District</option>
-                                    <option value="4">District</option>
-                                </select>
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="zip" name="zip" placeholder="Postcode/ZIP">
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <div class="creat_account">
-                                    <input type="checkbox" id="f-option2" name="selector">
-                                    <label for="f-option2">Create an account?</label>
-                                </div>
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <div class="creat_account">
-                                    <h3>Shipping Details</h3>
-                                    <input type="checkbox" id="f-option3" name="selector">
-                                    <label for="f-option3">Ship to a different address?</label>
-                                </div>
-                                <textarea class="form-control" name="message" id="message" rows="1" placeholder="Order Notes"></textarea>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="order_box">
-                            <h2>Your Order</h2>
-                            <ul class="list">
-                                <li><a href="#">Product <span>Total</span></a></li>
-                                <li><a href="#">Fresh Blackberry <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>
-                                <li><a href="#">Fresh Tomatoes <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>
-                                <li><a href="#">Fresh Brocoli <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>
-                            </ul>
-                            <ul class="list list_2">
-                                <li><a href="#">Subtotal <span>$2160.00</span></a></li>
-                                <li><a href="#">Shipping <span>Flat rate: $50.00</span></a></li>
-                                <li><a href="#">Total <span>$2210.00</span></a></li>
-                            </ul>
-                            <div class="payment_item">
-                                <div class="radion_btn">
-                                    <input type="radio" id="f-option5" name="selector">
-                                    <label for="f-option5">Check payments</label>
-                                    <div class="check"></div>
-                                </div>
-                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
-                                    Store Postcode.</p>
-                            </div>
-                            <div class="payment_item active">
-                                <div class="radion_btn">
-                                    <input type="radio" id="f-option6" name="selector">
-                                    <label for="f-option6">Paypal </label>
-                                    <img src="img/product/card.jpg" alt="">
-                                    <div class="check"></div>
-                                </div>
-                                <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal
-                                    account.</p>
-                            </div>
-                            <div class="creat_account">
-                                <input type="checkbox" id="f-option4" name="selector">
-                                <label for="f-option4">I’ve read and accept the </label>
-                                <a href="#">terms & conditions*</a>
-                            </div>
-                            <a class="primary-btn" href="#">Proceed to Paypal</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================End Checkout Area =================-->
+session_start();
 
-    <?php include('./footer.php');?>
+if(isset($_SESSION['user_id'])){
+   $user_id = $_SESSION['user_id'];
+}else{
+   $user_id = '';
+   header('location:user_login.php');
+};
+
+if(isset($_POST['order'])){
+
+   $name = $_POST['name'];
+   $name = filter_var($name, FILTER_SANITIZE_STRING);
+   $number = $_POST['number'];
+   $number = filter_var($number, FILTER_SANITIZE_STRING);
+   $email = $_POST['email'];
+   $email = filter_var($email, FILTER_SANITIZE_STRING);
+   $method = $_POST['method'];
+   $method = filter_var($method, FILTER_SANITIZE_STRING);
+   $address = 'flat no. '. $_POST['flat'] .', '. $_POST['street'] .', '. $_POST['city'] .', '. $_POST['state'] .', '. $_POST['country'] .' - '. $_POST['pin_code'];
+   $address = filter_var($address, FILTER_SANITIZE_STRING);
+   $total_products = $_POST['total_products'];
+   $total_price = $_POST['total_price'];
+
+   $check_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+   $check_cart->execute([$user_id]);
+
+   if($check_cart->rowCount() > 0){
+
+      $insert_order = $conn->prepare("INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price) VALUES(?,?,?,?,?,?,?,?)");
+      $insert_order->execute([$user_id, $name, $number, $email, $method, $address, $total_products, $total_price]);
+
+      $delete_cart = $conn->prepare("DELETE FROM `cart` WHERE user_id = ?");
+      $delete_cart->execute([$user_id]);
+
+      $message[] = 'order placed successfully!';
+   }else{
+      $message[] = 'your cart is empty';
+   }
+
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>checkout</title>
+   
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+   
+<?php include 'components/user_header.php'; ?>
+
+<section class="checkout-orders">
+
+   <form action="" method="POST">
+
+   <h3>your orders</h3>
+
+      <div class="display-orders">
+      <?php
+         $grand_total = 0;
+         $cart_items[] = '';
+         $select_cart = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
+         $select_cart->execute([$user_id]);
+         if($select_cart->rowCount() > 0){
+            while($fetch_cart = $select_cart->fetch(PDO::FETCH_ASSOC)){
+               $cart_items[] = $fetch_cart['name'].' ('.$fetch_cart['price'].' x '. $fetch_cart['quantity'].') - ';
+               $total_products = implode($cart_items);
+               $grand_total += ($fetch_cart['price'] * $fetch_cart['quantity']);
+      ?>
+         <p> <?= $fetch_cart['name']; ?> <span>(<?= '$'.$fetch_cart['price'].'/- x '. $fetch_cart['quantity']; ?>)</span> </p>
+      <?php
+            }
+         }else{
+            echo '<p class="empty">your cart is empty!</p>';
+         }
+      ?>
+         <input type="hidden" name="total_products" value="<?= $total_products; ?>">
+         <input type="hidden" name="total_price" value="<?= $grand_total; ?>" value="">
+         <div class="grand-total">grand total : <span>$<?= $grand_total; ?>/-</span></div>
+      </div>
+
+      <h3>place your orders</h3>
+
+      <div class="flex">
+         <div class="inputBox">
+            <span>your name :</span>
+            <input type="text" name="name" placeholder="enter your name" class="box" maxlength="20" required>
+         </div>
+         <div class="inputBox">
+            <span>your number :</span>
+            <input type="number" name="number" placeholder="enter your number" class="box" min="0" max="9999999999" onkeypress="if(this.value.length == 10) return false;" required>
+         </div>
+         <div class="inputBox">
+            <span>your email :</span>
+            <input type="email" name="email" placeholder="enter your email" class="box" maxlength="50" required>
+         </div>
+         <div class="inputBox">
+            <span>payment method :</span>
+            <select name="method" class="box" required>
+               <option value="cash on delivery">cash on delivery</option>
+               <option value="credit card">credit card</option>
+               <option value="paytm">paytm</option>
+               <option value="paypal">paypal</option>
+            </select>
+         </div>
+         <div class="inputBox">
+            <span>address line 01 :</span>
+            <input type="text" name="flat" placeholder="e.g. flat number" class="box" maxlength="50" required>
+         </div>
+         <div class="inputBox">
+            <span>address line 02 :</span>
+            <input type="text" name="street" placeholder="e.g. street name" class="box" maxlength="50" required>
+         </div>
+         <div class="inputBox">
+            <span>city :</span>
+            <input type="text" name="city" placeholder="e.g. mumbai" class="box" maxlength="50" required>
+         </div>
+         <div class="inputBox">
+            <span>state :</span>
+            <input type="text" name="state" placeholder="e.g. maharashtra" class="box" maxlength="50" required>
+         </div>
+         <div class="inputBox">
+            <span>country :</span>
+            <input type="text" name="country" placeholder="e.g. India" class="box" maxlength="50" required>
+         </div>
+         <div class="inputBox">
+            <span>pin code :</span>
+            <input type="number" min="0" name="pin_code" placeholder="e.g. 123456" min="0" max="999999" onkeypress="if(this.value.length == 6) return false;" class="box" required>
+         </div>
+      </div>
+
+      <input type="submit" name="order" class="btn <?= ($grand_total > 1)?'':'disabled'; ?>" value="place order">
+
+   </form>
+
+</section>
 
 
-    <script src="js/vendor/jquery-2.2.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/nouislider.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <!--gmaps Js-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-    <script src="js/gmaps.min.js"></script>
-    <script src="js/main.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<?php include 'components/footer.php'; ?>
+
+<script src="js/script.js"></script>
+
 </body>
-
 </html>

@@ -39,6 +39,43 @@ if(isset($_POST['submit'])){
 
 }
 
+<<<<<<< HEAD
+=======
+// ----------regex using mysqli----------------
+// if (isset($_POST['submit'])) {
+//    $name = mysqli_real_escape_string($conn, $_POST['name']);
+//    $email = mysqli_real_escape_string($conn, $_POST['email']);
+//    $password = mysqli_real_escape_string($conn, $_POST['password']);
+//    $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']); 
+
+
+//    if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
+//    $name_error = "Name must contain only alphabets and space";
+//    }
+//    if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+//    $email_error = "Please Enter Valid Email ID";
+//    }
+//    if(strlen($password) < 6) {
+//    $password_error = "Password must be minimum of 6 characters";
+//    }       
+   
+//    if($password != $cpassword) {
+//    $cpassword_error = "Password and Confirm Password doesn't match";
+//    }
+//    if (!$error) {
+//    if(mysqli_query($conn, "INSERT INTO users(name, email, mobile ,password) VALUES('" . $name . "', '" . $email . "', '" . $mobile . "', '" . md5($password) . "')")) {
+//    header("location: registration.php");
+//    exit();
+//    } else {
+//    echo "Error: " . $sql . "" . mysqli_error($conn);
+//    }
+//    }
+//    mysqli_close($conn);
+//    }
+// ----------regex using pdo----------------
+
+   ?>
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
 
 ?>
 

@@ -24,4 +24,9 @@ subImages.forEach(images =>{
       src = images.getAttribute('src');
       mainImage.src = src;
    }
+<<<<<<< HEAD
 });
+=======
+});
+
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535

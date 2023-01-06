@@ -1,124 +1,157 @@
-<?php include('./header.php');?>
+<?php
 
-	<!-- Start Banner Area -->
-	<section class="banner-area organic-breadcrumb">
-		<div class="container">
-			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
-				<div class="col-first">
-					<h1>Contact Us</h1>
-					<nav class="d-flex align-items-center">
-						<a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
-						<a href="category.html">Contact</a>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Banner Area -->
+include 'components/connect.php';
 
-	<!--================Contact Area =================-->
-	<section class="contact_area section_gap_bottom">
-		<div class="container">
-			<div id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
-			 data-mlat="40.701083" data-mlon="-74.1522848">
-			</div>
-			<div class="row">
-				<div class="col-lg-3">
-					<div class="contact_info">
-						<div class="info_item">
-							<i class="lnr lnr-home"></i>
-							<h6>California, United States</h6>
-							<p>Santa monica bullevard</p>
-						</div>
-						<div class="info_item">
-							<i class="lnr lnr-phone-handset"></i>
-							<h6><a href="#">00 (440) 9865 562</a></h6>
-							<p>Mon to Fri 9am to 6 pm</p>
-						</div>
-						<div class="info_item">
-							<i class="lnr lnr-envelope"></i>
-							<h6><a href="#">support@colorlib.com</a></h6>
-							<p>Send us your query anytime!</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-9">
-					<form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'">
-							</div>
-							<div class="form-group">
-								<input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'">
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"></textarea>
-							</div>
-						</div>
-						<div class="col-md-12 text-right">
-							<button type="submit" value="submit" class="primary-btn">Send Message</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================Contact Area =================-->
+session_start();
 
-	<?php include('./footer.php');?>
+if(isset($_SESSION['user_id'])){
+   $user_id = $_SESSION['user_id'];
+}else{
+   $user_id = '';
+};
 
-	<!--================Contact Success and Error message Area =================-->
-	<div id="success" class="modal modal-message fade" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<i class="fa fa-close"></i>
-					</button>
-					<h2>Thank you</h2>
-					<p>Your message is successfully sent...</p>
-				</div>
-			</div>
-		</div>
-	</div>
+if(isset($_POST['send'])){
 
-	<!-- Modals error -->
+   $name = $_POST['name'];
+   $name = filter_var($name, FILTER_SANITIZE_STRING);
+   $email = $_POST['email'];
+   $email = filter_var($email, FILTER_SANITIZE_STRING);
+   $number = $_POST['number'];
+   $number = filter_var($number, FILTER_SANITIZE_STRING);
+   $msg = $_POST['msg'];
+   $msg = filter_var($msg, FILTER_SANITIZE_STRING);
 
-	<div id="error" class="modal modal-message fade" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<i class="fa fa-close"></i>
-					</button>
-					<h2>Sorry !</h2>
-					<p> Something went wrong </p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--================End Contact Success and Error message Area =================-->
+   $select_message = $conn->prepare("SELECT * FROM `messages` WHERE name = ? AND email = ? AND number = ? AND message = ?");
+   $select_message->execute([$name, $email, $number, $msg]);
+
+   if($select_message->rowCount() > 0){
+      $message[] = 'already sent message!';
+   }else{
+
+      $insert_message = $conn->prepare("INSERT INTO `messages`(user_id, name, email, number, message) VALUES(?,?,?,?,?)");
+      $insert_message->execute([$user_id, $name, $email, $number, $msg]);
+
+      $message[] = 'sent message successfully!';
+
+   }
+
+}
 
 
-	<script src="js/vendor/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-	 crossorigin="anonymous"></script>
-	<script src="js/vendor/bootstrap.min.js"></script>
-	<script src="js/jquery.ajaxchimp.min.js"></script>
-	<script src="js/jquery.nice-select.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
-	<script src="js/nouislider.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<!--gmaps Js-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-	<script src="js/gmaps.min.js"></script>
-	<script src="js/main.js"></script>
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>contact</title>
+   
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <style>
+         body{
+               background-image: url("project images/Untitled__5_-removebg-preview.png");
+               background-repeat: no-repeat;
+               background-size: 65%;
+            }
+            input{
+               background-color: none !important;
+            }
+            .btn_login_now , .option-btn{
+               background-color: #165168 !important;   
+               color: white;
+            }
+
+            .btn_login_now:hover{
+               background-color:white !important;
+               color: #165168 !important;
+               border: 1px #165168 solid !important;
+            }
+
+            .option-btn:hover{
+               background-color:white !important;
+               color: #165168 !important;
+               border: 1px #165168 solid !important;
+
+            }
+            
+            .btn-first-time{
+               color:black !important;
+               text-align: center;
+               font-size:15px !important;
+               margin-top:330px !important;
+               color:#165168 !important;
+            }
+            .btn-first-time:hover{
+               text-decoration:underline;
+               
+            }
+            
+            .contact form{
+                  padding:2rem;
+                  text-align: center;
+                  margin: 10px auto 55px auto;
+                  margin-right:-150px;
+                  max-width: 50rem;
+            }
+
+            
+            form h3{
+               position:absolute !important;
+               left:60px !important;
+               top:15pc !important;
+               margin-bottom : 30px;
+               font-size:55px !important;
+               color:white !important;
+               
+            }
+
+            h3{
+               margin-bottom : 30px;
+            }
+
+
+   </style>
+      
+</head>
+<body>
+   
+<?php include 'components/user_header.php'; ?>
+
+<section class="contact">
+
+   <form action="" method="post">
+      <h3>get in touch</h3>
+      <input type="text" name="name" placeholder="enter your name" required maxlength="20" class="box">
+      <input type="email" name="email" placeholder="enter your email" required maxlength="50" class="box">
+      <input type="number" name="number" min="0" max="9999999999" placeholder="enter your number" required onkeypress="if(this.value.length == 10) return false;" class="box">
+      <textarea name="msg" class="box" placeholder="enter your message" cols="30" rows="10"></textarea>
+      <input type="submit" value="send message" name="send" class="btn btn_login_now">
+   </form>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php include 'components/footer.php'; ?>
+
+<script src="js/script.js"></script>
+
 </body>
-
 </html>
