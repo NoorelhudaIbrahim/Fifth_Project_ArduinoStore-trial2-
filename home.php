@@ -181,21 +181,6 @@ include 'components/wishlist_cart.php';
    <div class="swiper-wrapper">
 
 
-   <a href="category.php?category=Arduino" class="swiper-slide slide">
-      <img src="uploaded_img/Arduino nano-33-blesense.jpg" alt="">
-      <h3>Arduino</h3>
-   </a>
-
-   <a href="category.php?category=tv" class="swiper-slide slide">
-      <img src="images/icon-2.png" alt="">
-      <h3>Arduino1</h3>
-   </a>
-
-   <a href="category.php?category=camera" class="swiper-slide slide">
-      <img src="images/icon-3.png" alt="">
-      <h3>Arduino2</h3>
-   </a>
-
 
    <a href="category.php?category=Kits" class="swiper-slide slide">
       <img src="uploaded_img/Arduino starter-kit.jpg" alt="">
