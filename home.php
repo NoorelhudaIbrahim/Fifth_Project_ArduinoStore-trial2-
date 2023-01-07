@@ -236,7 +236,7 @@ include 'components/wishlist_cart.php';
          $i=0;
    ?>
    <form action="" method="post" class="swiper-slide slide" style="height:430px">
-      <input type="hidden" name="product_id" value="<?= $fetch_product['product_id']; ?>">
+      <input type="hidden" name="product_id" value="<?= $fetch_product['id']; ?>">
       <input type="hidden" name="name" value="<?= $fetch_product['name']; ?>">
       <?php 
       if ($fetch_product['on_sale'] == 1){
@@ -249,9 +249,9 @@ include 'components/wishlist_cart.php';
          <?php
       }
       ?>
-      <input type="hidden" name="image" value="<?= $fetch_product['image']; ?>">
-      <a href="quick_view.php?pid=<?= $fetch_product['product_id']; ?>" class="fas fa-eye"></a>
-      <img src="uploaded_img/<?= $fetch_product['image']; ?>" alt="">
+      <input type="hidden" name="image" value="<?= $fetch_product['image_01']; ?>">
+      <a href="quick_view.php?pid=<?= $fetch_product['id']; ?>" class="fas fa-eye"></a>
+      <img src="uploaded_img/<?= $fetch_product['image_01']; ?>" alt="">
       <div class="name"><?= $fetch_product['name']; ?></div>
       <?php $product_category = $conn->prepare("SELECT * FROM products INNER JOIN category ON products.category_name = category.category_id");
                   $product_category->execute();
