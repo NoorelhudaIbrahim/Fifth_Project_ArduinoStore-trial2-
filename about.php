@@ -34,15 +34,113 @@ if(isset($_SESSION['user_id'])){
       background-color:#165168;
       color: #FFF;
    }
+   .maneger{
+      margin:50px !important;
+
+   }
 </style>
 <body>
    
 <?php include 'components/user_header.php'; ?>
   
-   <div> 
+   <!-- <div> 
       <video src="https://www.datocms-assets.com/76605/1668676208-banner-handbrake.webm" width="100%" muted autoplay></video>
+   </div> -->
+
+
+   <section class="reviews">
+
+<h1 class="heading maneger">Maneger</h1>
+
+<div class="swiper reviews-slider">
+
+<div class="swiper-wrapper">
+
+   <div class="swiper-slide slide">
+      <img src="images/1.jpeg" alt="">
+      <p>Full stack devloper orange Acdemy</p>
+      <!-- <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+      </div> -->
+      <h3>karam</h3>
    </div>
 
+   <div class="swiper-slide slide">
+      <img src="images/4444.jfif" alt="">
+      <p>Full stack devloper orange Acdemy </p>
+      <!-- <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+      </div> -->
+      <h3>jack</h3>
+   </div>
+
+   <div class="swiper-slide slide">
+      <img src="images/23.jpg" alt="">
+      <p>Full stack devloper orange Acdemy</p>
+      <!-- <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+      </div> -->
+      <h3>huda</h3>
+   </div>
+
+   <div class="swiper-slide slide">
+      <img src="images/22.jpg" alt="">
+      <p>Full stack devloper orange Acdemy</p>
+      <!-- <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+      </div> -->
+      <h3>mohamad</h3>
+   </div>
+
+   <div class="swiper-slide slide">
+      <img src="images/" alt="">
+      <p>Full stack devloper orange Acdemy</p>
+      <!-- <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+      </div> -->
+      <h3>Noor huda</h3>
+   </div>
+
+   <!-- <div class="swiper-slide slide">
+      <img src="images/pic-6.png" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia tempore distinctio hic, iusto adipisci a rerum nemo perspiciatis fugiat sapiente.</p>
+      <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+      </div>
+      <h3>john deo</h3>
+   </div> -->
+
+</div>
+
+<div class="swiper-pagination"></div>
+
+</div>
+
+</section>
 <section class="about">
  
 
@@ -50,9 +148,9 @@ if(isset($_SESSION['user_id'])){
       <div class="content">
          <h3 style="color:#117693;">What is Arduino?</h3>
          <p>Arduino designs, manufactures, and supports electronic devices and software, allowing people around the world to easily access advanced technologies that interact with the physical world. Our products are straightforward, simple, and powerful, ready to satisfy users’ needs from students to makers and all the way to professional developers.</p>
+
          <h3 style="color:#117693;">Our Mission & Vision</h3>
             <p>Arduino’s mission is to enable anyone to enhance their lives through accessible electronics and digital technologies. There was once a barrier between the electronics, design, and programming world and the rest of the world. Arduino has broken down that barrier.
-
             Over the years, Arduino products have been the brains behind thousands of projects, from everyday objects to complex scientific instruments. A worldwide community, comprising students, hobbyists, artists, programmers, and professionals, has gathered around this open-source platform, their contributions adding up to an incredible amount of accessible knowledge.
 
           </p>
@@ -62,127 +160,12 @@ if(isset($_SESSION['user_id'])){
       </div>
 
    </div>
+</br>
+</br>
 
 </section>
-<!-- <section>
-      <div class="content">
-
-         <h3>Our Mission & Vision</h3>
-            <p>Arduino’s mission is to enable anyone to enhance their lives through accessible electronics and digital technologies. There was once a barrier between the electronics, design, and programming world and the rest of the world. Arduino has broken down that barrier.
-
-            Over the years, our products have been the brains behind thousands of projects, from everyday objects to complex scientific instruments. A worldwide community, comprising students, hobbyists, artists, programmers, and professionals, has gathered around this open-source platform, their contributions adding up to an incredible amount of accessible knowledge.
-
-            Our vision is to make Arduino available to everyone, whether you are a student, maker or professional, which is why we now have three segments to our business. These segments work together as an ecosystem with a shared mindset: we started with Maker, and that has evolved into Education and PRO solutions.</p>
-
-         <a href="contact.php" class="btn" >Contact </a>
-
-         <h3>why choose us?</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam veritatis minus et similique doloribus? Harum molestias tenetur eaque illum quas? Obcaecati nulla in itaque modi magnam ipsa molestiae ullam consequuntur.</p>
-         <a href="contact.php" class="btn">contact us</a>
-
-      </div>
-
-   </div>
-
-</section> -->
 
 
-
-
-
-<!-- <section class="reviews">
-   
-   <h1 class="heading">client's reviews</h1>
-
-   <div class="swiper reviews-slider">
-
-   <div class="swiper-wrapper">
-
-      <div class="swiper-slide slide">
-         <img src="images/pic-1.png" alt="">
-         <p>Awesome for getting into microcontroler programming and circuit design,An excellent way to start in microcontrollers</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-         <h3>Noor Esmael</h3>
-      </div>
-
-      <div class="swiper-slide slide">
-         <img src="images/pic-2.png" alt="">
-         <p>As a computer engineer I have been using a LOT of development boards ranging from Spartan to Basys, to digilent boards. </p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-         <h3>Deema Hindawi</h3>
-      </div>
-
-      <div class="swiper-slide slide">
-         <img src="images/pic-3.png" alt="">
-         <p>great little microcontroller to learn on,A lot of them have been great boards.Short and to the point, this is a great product</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-         <h3>Alaa ahmad</h3>
-      </div>
-
-      <!-- <div class="swiper-slide slide">
-         <img src="images/pic-4.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia tempore distinctio hic, iusto adipisci a rerum nemo perspiciatis fugiat sapiente.</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-         <h3>john deo</h3>
-      </div>
-
-      <div class="swiper-slide slide">
-         <img src="images/pic-5.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia tempore distinctio hic, iusto adipisci a rerum nemo perspiciatis fugiat sapiente.</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-         <h3>john deo</h3>
-      </div>
-
-      <div class="swiper-slide slide">
-         <img src="images/pic-6.png" alt="">
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia tempore distinctio hic, iusto adipisci a rerum nemo perspiciatis fugiat sapiente.</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-         <h3>john deo</h3>
-      </div> -->
-
-   </div>
-
-   <div class="swiper-pagination"></div>
-
-   </div>
-
-</section> -->
 
 
 

@@ -59,6 +59,13 @@ if(isset($_POST['submit'])){
       if($select_user->rowCount() > 0){
          $message[] = 'email already exists!';
       }else{
+
+         $insert_user = $conn->prepare("INSERT INTO `users`(name, email, password) VALUES(?,?,?)");
+         $insert_user->execute([$name, $email, $cpass]);
+         $message[] = 'registered successfully, login now please!';
+      }
+   }
+
          if( $pass != $cpass){
             $message[] = 'confirm password not matched!';
          }
@@ -71,7 +78,9 @@ if(isset($_POST['submit'])){
          }
       }
      }
+
 }
+
 
 // ---------------------------regex using pdo(but not work)-------------------------------------------
 // if(isset($_POST['submit']))
@@ -190,6 +199,8 @@ if(isset($_POST['submit'])){
 
    ?>
 
+
+?>
 
 
 

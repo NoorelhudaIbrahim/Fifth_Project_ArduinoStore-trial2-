@@ -43,7 +43,7 @@ if(isset($_GET['delete'])){
    <div class="box-container">
 
    <div class="box">
-      <p>add new admin</p>
+      <p>add new admin </p>
       <a href="register_admin.php" class="option-btn">register admin</a>
    </div>
 
@@ -56,9 +56,11 @@ if(isset($_GET['delete'])){
    <div class="box">
       <p> admin id : <span><?= $fetch_accounts['id']; ?></span> </p>
       <p> admin name : <span><?= $fetch_accounts['name']; ?></span> </p>
+
       <div class="flex-btn">
          <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" onclick="return confirm('delete this account?')" class="delete-btn">delete</a>
-         <?php
+        
+        <?php
             if($fetch_accounts['id'] == $admin_id){
                echo '<a href="update_profile.php" class="option-btn">update</a>';
             }
@@ -75,18 +77,6 @@ if(isset($_GET['delete'])){
    </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
 <script src="../js/admin_script.js"></script>
    
 </body>

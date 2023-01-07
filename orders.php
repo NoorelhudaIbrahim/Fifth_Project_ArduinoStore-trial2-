@@ -73,18 +73,6 @@ if(isset($_SESSION['user_id'])){
 
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
 <?php include 'components/footer.php'; ?>
 
 <script src="js/script.js"></script>

@@ -53,7 +53,9 @@ include 'components/wishlist_cart.php';
          background-image:url('project images/Untitled__8_-removebg-preview.png');
          background-repeat: no-repeat;
          background-size: 70%;
+         /* height:50em; */
          height:20em;
+
       }
          
       .imge_hoda_noor{
@@ -154,25 +156,46 @@ include 'components/wishlist_cart.php';
                   <a href="shop.php" class="btn" style="background-color:white;color:#103848;">shop now</a>
                </div>
             </div>
-
          </div>
-
          <div class="swiper-pagination"></div>
-
       </div>
-
    </section>
-
 </div>
+
+<div>
+
+            <!-- Add section Discount -->
+                         
+   <section class="category" >
+
 <div >
 <!-- -----------------------------------category---------------------------------------------------- -->
 <section class="category" >
 
+
    <h1 class="heading">shop by category</h1>
+
 
    <div class="swiper category-slider">
 
    <div class="swiper-wrapper">
+
+
+   <a href="category.php?category=Arduino" class="swiper-slide slide">
+      <img src="uploaded_img/Arduino nano-33-blesense.jpg" alt="">
+      <h3>Arduino</h3>
+   </a>
+
+   <a href="category.php?category=tv" class="swiper-slide slide">
+      <img src="images/icon-2.png" alt="">
+      <h3>Arduino1</h3>
+   </a>
+
+   <a href="category.php?category=camera" class="swiper-slide slide">
+      <img src="images/icon-3.png" alt="">
+      <h3>Arduino2</h3>
+   </a>
+
 
    <a href="category.php?category=Kits" class="swiper-slide slide">
       <img src="uploaded_img/Arduino starter-kit.jpg" alt="">
@@ -193,15 +216,19 @@ include 'components/wishlist_cart.php';
       <img src="uploaded_img/Arduino-leonardo.jpg" alt="">
       <h3>Classic Family</h3>
    </a>
-   </div>
-
-   <div class="swiper-pagination"></div>
 
    </div>
+       <div class="swiper-pagination"></div>
+   </div>
+
+
+
+</section>
 
 </section>
 
 <!-- -------------------------------------------------------------------------------- -->
+
 
 <!-- ---------------------sales product----------------------------------- -->
 <section class="home-products">
@@ -213,7 +240,11 @@ include 'components/wishlist_cart.php';
    <div class="swiper-wrapper">
 
    <?php
+
+     $select_products = $conn->prepare("SELECT * FROM `products` LIMIT 6 "); 
+
      $select_products = $conn->prepare("SELECT * FROM `products` WHERE on_sale='1'"); 
+
      $select_products->execute();
      if($select_products->rowCount() > 0){
       while($fetch_product = $select_products->fetch(PDO::FETCH_ASSOC)){
@@ -272,6 +303,7 @@ include 'components/wishlist_cart.php';
       </div>
       <button type="submit" class="btn" name="addTOcart">Add To Cart</button>
    </form>
+
    <?php
       }
    }else{
@@ -289,8 +321,12 @@ include 'components/wishlist_cart.php';
 
 
 
+
+
 <!-- -----------------advantages--------------------------------------- -->
+
 <section >
+
 <div class="noor">
    <span><i class="fa-solid fa-user-shield"></i></span>
   
@@ -307,8 +343,6 @@ include 'components/wishlist_cart.php';
 </div>
 
 </section>
-
-
 
 
 
