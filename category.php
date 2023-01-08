@@ -11,7 +11,7 @@ if(isset($_SESSION['user_id'])){
 };
 
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
-   $product_id = $_POST['pid'];
+   $product_id = $_POST['id'];
    $product_name = $_POST['name'];
    $product_price = $_POST['price'];
    $product_image = $_POST['image'];
@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
    $name_of_category->execute();
    $fetch_category_name = $name_of_category->fetch(PDO::FETCH_ASSOC);
    ?>
-   <h1 class="heading">Category : <?= $fetch_category_name['category_name']; ?> </h1>
+   <h1 class="heading"  style="margin-top:7rem;">Category : <?= $fetch_category_name['category_name']; ?> </h1>
 
    <div class="box-container">
 
