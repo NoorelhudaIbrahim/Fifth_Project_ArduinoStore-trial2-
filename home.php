@@ -54,30 +54,76 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
          background-repeat: no-repeat;
          background-size: 70%;
          /* height:50em; */
+
+
+         height:35em;
+
          height:50em;
+ 
 
       }
+
+      .swiper-slide img {
+         width: 200px !important;
+         height:200px !important;
+      }
+     
+
          
+      .swiper-slide h3 {
+         background-color: #117693;
+         color: white !important;
+
+         display: block;
+         width: 100%;
+         margin-top: 1rem;
+         border-radius: 0.5rem;
+         padding: 1rem 3rem;
+         font-size: 1.7rem;
+         text-transform: capitalize;
+         color: var(--white);
+         cursor: pointer;
+         text-align: center;
+
+      }
+
+      .swiper-slide h3,.swiper-slide img,a:hover{
+         background-color: none !important;
+      }
+
+      .swiper-slide h3:hover{
+         background-color: white;
+         color: #117693 !important;
+         border: 1px #117693 solid;
+      }
+
+      
       .imge_hoda_noor{
          background-image:url('images/bg33.jpg') !important;   
-         background-size: 115.5%;
+         background-size: 100%;
          background-repeat: no-repeat;
-         /* height: 150% !important; */
+         height: 30% !important;
       }
       .img1{
-         background-image:url('images/ai.png') !important;
-         background-size: 130%;
+         background-image:url('images/Untitled\ design\ \(1\).png') !important;
+         background-size: 100%;
          background-repeat: no-repeat;
+         height: 150% !important;
+
       }
       .img2{
-         background-image:url('images/learning.jpg') !important;
-         background-size: 130%;
+         background-image:url('images/Untitled\ design\ \(1\).png') !important;
+         background-size: 100%;
          background-repeat: no-repeat;
+         height: 150% !important;
+
       }
       .img3{
          background-image:url('images/33.jpeg') !important;
          background-size: 130%;
          background-repeat: no-repeat;
+         height: 150% !important;
+
       }
       .sale {
          margin-left :20px;
@@ -98,7 +144,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
          background-color:#117693;
 
       }
-      
+
+      .video{
+         height: 100%;
+         width: 100%;
+      }
+    
 
    </style>
 
@@ -110,8 +161,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
 <div class="home-bg">
 
    <div class="home">
-
-      <div class="swiper home-slider">
+   <div> 
+      <video src="https://www.datocms-assets.com/76605/1668676208-banner-handbrake.webm"  muted autoplay class="video"></video>
+   </div>
+      
+      <!-- <div class="swiper home-slider"> 
       
          <div class="swiper-wrapper">
 
@@ -121,45 +175,45 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
                   <h3>Discover <br>the power of AI</h3>
                   <a href="shop.php" class="btn">shop now</a>
                </div>
-            </div>
+            </div> --> 
 
-            <div class="swiper-slide slide img1">
-               <!-- <div class="image">
+             <!-- <div class="swiper-slide slide img1">
+                <div class="image">
                   <img src="images/1.png" alt="">
-               </div> -->
+               </div> 
                <div class="content sale2" style="margin-left:41%; margin-top:10%;">
-                  <span style="color:white;">up to 50% off</span>
-                  <h3 style="color:white;">Discover <br> the power of AI</h3>
+                  <span>up to 50% off</span>
+                  <h3>Discover <br>the power of AI</h3>
                   <a href="shop.php" class="btn">shop now</a>
                </div>
-            </div>
+            </div> -->
 
-            <div class="swiper-slide slide img2">
-               <!-- <div class="image">
+            <!-- <div class="swiper-slide slide img2"> 
+                <div class="image">
                   <img src="images/from-human.png" alt="0">
-               </div> -->
+               </div> 
                <div class="content sale2" style="margin-left:-13rem; ">
-                  <span style="color:#103848;">up to 50% off</span>
-                  <h3 style="color:#103848;">AI is going to <br>change the world!</h3>
-                  <a href="shop.php" class="btn" style="background-color:#103848;">shop now</a>
+                  <span>up to 50% off</span>
+                  <h3>Discover <br>the power of AI</h3>
+                  <a href="shop.php" class="btn">shop now</a>
                </div>
-            </div>
+            </div> -->
 
-            <div class="swiper-slide slide img3">
-               <!-- <div class="image">
+            <!-- <div class="swiper-slide slide img3"> 
+               <div class="image">
                   <img src="images/to-machine.png" alt="">
-               </div> -->
+               </div> 
                <div class="content sale2" style="margin-left:-13rem;">
 
-                  <span style="color:white;">upto 50% off</span>
-                  <h3 style="color:white;">From human to machine <br>and back again!</h3>
-                  <a href="shop.php" class="btn" style="background-color:white;color:#103848;">shop now</a>
+                   <span>up to 50% off</span>
+                  <h3>Discover <br>the power of AI</h3>
+                  <a href="shop.php" class="btn">shop now</a>
                </div>
             </div>
          </div>
          <div class="swiper-pagination"></div>
-      </div>
-   </section>
+      </div>  -->
+ 
 </div>
 
 <div>

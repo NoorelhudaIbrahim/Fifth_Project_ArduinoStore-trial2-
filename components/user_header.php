@@ -12,16 +12,15 @@
    }
 ?>
 
-<!-- 
-<header class="header " style="background-color:#117693;">
 
-<style>
+
+<!-- <style>
    .navbar a{
       /* justify-content: center; */
       padding:50px;
-   }
- 
+   
 </style> -->
+
 <header class="header">
 
 
@@ -49,7 +48,7 @@
          ?>
          
          <div id="menu-btn" class="fas fa-bars"></div>
-         <a href="search_page.php"><i class="fa-brands fa-searchengin" style="color: white;font-size: 2.1rem; margin-right:10px;"></i></a>
+         <!-- <a href="search_page.php"><i class="fa-brands fa-searchengin" style="color: white;font-size: 2.1rem; margin-right:10px;"></i></a> -->
          <a href="cart.php" style="margin-right:10px;"><i class="fa-solid fa-bag-shopping" style="color: white;font-size: 2rem; "></i><p style=" display:inline-block; color:white; ">(<?= $total_cart_counts; ?>)</p></a>
          <div id="user-btn" class="fa-solid fa-user-tie" style="color: white;font-size: 2rem;"></div>
       </div>
