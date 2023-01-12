@@ -54,7 +54,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
          background-repeat: no-repeat;
          background-size: 70%;
          /* height:50em; */
+
+
          height:35em;
+
+         height:50em;
+ 
 
       }
 
@@ -219,13 +224,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
 
 <div >
 <!-- -----------------------------------category---------------------------------------------------- -->
-<section class="category" >
+<section class="category">
 
 
    <h1 class="heading">shop by category</h1>
 
 
-   <div class="swiper category-slider">
+   <div class="swiper category-slider" >
 
    <div class="swiper-wrapper">
 
