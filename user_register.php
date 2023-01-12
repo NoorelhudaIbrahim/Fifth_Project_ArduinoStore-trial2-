@@ -77,60 +77,6 @@ if(isset($_POST['submit'])){
 
          }
       }
-     
-
-
-
-
-// ---------------------------regex using pdo(but not work)-------------------------------------------
-// if(isset($_POST['submit']))
-// {
-//    $name= ($_POST['name']);
-//    $email= ($_POST['email']);
-//    $pass= ($_POST['pass']);
-//    $cpass=($_POST['cpass']);
-
-
-//    if(empty($name)){
-//       $name_errorMsg[]="Please Enter Your Name";
-
-//    }
-//    else if (!preg_match("/^[a-zA-Z ]+$/",$name))
-//    {
-//       $name_errorMsg[]= "Name must contain only alphabets and space";
-//    }
-//    else if(empty($email)){
-//       $email_errorMsg[]="Please Enter Your Email";
-//    }
-//    else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-//       $email_errorMsg[]="Please Enter Your Valid Email Address";
-//    }
-//    else if(empty($pass)){
-//       $pass_errorMsg[]="Please Enter Your Password";
-//    }
-//    else if(strlen($pass)<8){
-//       $pass_errorMsg[]="Password must be atleast 8 characters";
-//    }
-
-//     $select_user = $conn->prepare("SELECT * FROM users WHERE email = ?");
-//     $select_user->execute([$email,]);
-//     $row = $select_user->fetch(PDO::FETCH_ASSOC);
-         
-//     if($select_user->rowCount() > 0)
-//     {
-//             $emaile_errorMsg[] = 'email already exists!';
-//          }else{
-//             if($pass != $cpass){
-//                $passe_errorMsg[] = 'confirm password not matched!';
-//             }else
-//             {
-//                $insert_user = $conn->prepare("INSERT INTO users(name, email, password) VALUES(?,?,?)");
-//                $insert_user->execute([$name, $email, $pass]);
-//                $message[] = 'registered successfully, login now please!';
-//                header('location: user_login.php');
-//             }
-//    }
-// }
 
 //  ------------before any edit-----------------------------------  
 
@@ -163,42 +109,6 @@ if(isset($_POST['submit'])){
 
 // }
 // ----------------------------------------------------------
-
-
-// -------------------regex using mysqli---------------------
-
-// if (isset($_POST['submit'])) {
-//    $name = mysqli_real_escape_string($conn, $_POST['name']);
-//    $email = mysqli_real_escape_string($conn, $_POST['email']);
-//    $password = mysqli_real_escape_string($conn, $_POST['password']);
-//    $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']); 
-
-
-//    if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
-//    $name_error = "Name must contain only alphabets and space";
-//    }
-//    if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
-//    $email_error = "Please Enter Valid Email ID";
-//    }
-//    if(strlen($password) < 6) {
-//    $password_error = "Password must be minimum of 6 characters";
-//    }       
-   
-//    if($password != $cpassword) {
-//    $cpassword_error = "Password and Confirm Password doesn't match";
-//    }
-//    if (!$error) {
-//    if(mysqli_query($conn, "INSERT INTO users(name, email, mobile ,password) VALUES('" . $name . "', '" . $email . "', '" . $mobile . "', '" . md5($password) . "')")) {
-//    header("location: registration.php");
-//   
-//    } else {
-//    echo "Error: " . $sql . "" . mysqli_error($conn);
-//    }
-//    
-// -------------------------------------------------------
-
-   ?>
-
 
 ?>
 

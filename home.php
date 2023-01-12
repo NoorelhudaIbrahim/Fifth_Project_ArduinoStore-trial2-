@@ -11,7 +11,7 @@ if(isset($_SESSION['user_id'])){
 };
 
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
-   $product_id = $_POST['pid'];
+   $product_id = $_POST['product_id'];
    $product_name = $_POST['name'];
    $product_price = $_POST['price'];
    $product_image = $_POST['image'];
@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
          background-repeat: no-repeat;
          background-size: 70%;
          /* height:50em; */
-         height:20em;
+         height:50em;
 
       }
          
@@ -170,13 +170,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
 
 <div >
 <!-- -----------------------------------category---------------------------------------------------- -->
-<section class="category" >
+<section class="category">
 
 
    <h1 class="heading">shop by category</h1>
 
 
-   <div class="swiper category-slider">
+   <div class="swiper category-slider" >
 
    <div class="swiper-wrapper">
 
