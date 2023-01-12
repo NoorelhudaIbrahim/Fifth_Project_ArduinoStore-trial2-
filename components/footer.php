@@ -1,7 +1,19 @@
 
+<style>
+   .footer{
+      padding: 0px;
+      margin: 0px;
+ 
+   }
+
+   .boxs{
+     margin-left: 180px;
+   }
+
+</style>
 
 <footer class="footer">
-
+   <div class="boxs">
    <section class="grid">
 
       <div class="box">
@@ -22,8 +34,8 @@
 
       <div class="box">
          <h3>contact us</h3>
-         <a href="https://wa.me/+962778079485" target=_blank;><i class="fas fa-phone"></i> +962778079485</a>
-         <a href="https://wa.me/+962778079485" target=_blank;><i class="fas fa-phone"></i> +111 222 3333</a>
+         <!-- <a href="https://wa.me/+962778079485" target=_blank;><i class="fas fa-phone"></i> +962778079485</a>
+         <a href="https://wa.me/+962778079485" target=_blank;><i class="fas fa-phone"></i> +111 222 3333</a> -->
          <a href="mailto:arduinostore@gmail.com" target=_blank;><i class="fas fa-envelope"></i> arduinostore@gmail.com</a>
          <a href="https://satellites.pro/Google_plan/Aqaba_map " target=_blank;><i class="fas fa-map-marker-alt"></i>Aqaba,jordan </a>
       </div>
@@ -35,9 +47,8 @@
          <a href="https://www.instagram.com/arduino.cc/" target=_blank;><i class="fab fa-instagram"></i>instagram</a>
          <a href="https://www.linkedin.com/company/arduino/" target=_blank;><i class="fab fa-linkedin"></i>linkedin</a>
       </div>
+</div>
 
    </section>
-
-  
 
 </footer>
