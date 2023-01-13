@@ -34,6 +34,7 @@
          <a href="orders.php">Orders</a>
          <a href="shop.php">Shop</a>
          <a href="contact.php">Contacts</a>
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
       </nav>
 
       <div class="icons">
@@ -51,6 +52,7 @@
          <!-- <a href="search_page.php"><i class="fa-brands fa-searchengin" style="color: white;font-size: 2.1rem; margin-right:10px;"></i></a> -->
          <a href="cart.php" style="margin-right:10px;"><i class="fa-solid fa-bag-shopping" style="color: white;font-size: 2rem; "></i><p style=" display:inline-block; color:white; ">(<?= $total_cart_counts; ?>)</p></a>
          <div id="user-btn" class="fa-solid fa-user-tie" style="color: white;font-size: 2rem;"></div>
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
       </div>
 
       <div class="profile">

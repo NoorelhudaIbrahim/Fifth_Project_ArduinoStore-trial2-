@@ -75,13 +75,28 @@ if(isset($_POST['submit'])){
             $message[] = 'registered successfully, login now please!';
             header('location: user_login.php');
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+// ----------regex using mysqli----------------
+// if (isset($_POST['submit'])) {
+//    $name = mysqli_real_escape_string($conn, $_POST['name']);
+//    $email = mysqli_real_escape_string($conn, $_POST['email']);
+//    $password = mysqli_real_escape_string($conn, $_POST['password']);
+//    $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']); 
+=======
          }
       }
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 //  ------------before any edit-----------------------------------  
 
 // if(isset($_POST['submit'])){
 
+<<<<<<< HEAD
+   ?>
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
+=======
 //    $name = $_POST['name'];
 //    $name = filter_var($name, FILTER_SANITIZE_STRING);
 //    $email = $_POST['email'];
@@ -109,6 +124,7 @@ if(isset($_POST['submit'])){
 
 // }
 // ----------------------------------------------------------
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 ?>
 
