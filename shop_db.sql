@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
+-- Generation Time: Jan 02, 2023 at 02:37 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
+=======
 -- Generation Time: Jan 12, 2023 at 10:40 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,6 +62,16 @@ CREATE TABLE `cart` (
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+<<<<<<< HEAD
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `pid`, `name`, `price`, `quantity`, `image`) VALUES
+(10, 2, 26, 'ali naserhh', 1212, 1, '1274158[9].jpg');
+
+=======
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 -- --------------------------------------------------------
 
 --
@@ -76,10 +92,16 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `category_name`, `category_description`, `create_at`, `update_at`, `category_imge`) VALUES
+<<<<<<< HEAD
+(20, 'mhamed', 'my category', '2023-01-02 13:32:30', '2023-01-02 13:32:30', 'Canary-300x300.jpg'),
+(21, 'karam', 'my category', '2023-01-02 13:33:06', '2023-01-02 13:33:06', '1024846.jpg'),
+(22, 'jack', 'asdas', '2023-01-02 13:33:28', '2023-01-02 13:33:28', 'images (1).jfif');
+=======
 (23, 'Kits', 'Kits are a great way to get started with Arduino. The classic Starter Kit includes an Arduino UNO, a large set of electronic components, and a physical book with 15 chapters to help you get started.  The Oplà IoT Kit includes the components needed to build amazing IoT projects, and the Sensor Kit includes a set of great plug-and-play sensors and actuators. These kits also have their own dedicated content platform, with several cool projects to follow step by step.', '2023-01-02 15:07:49', '2023-01-02 15:07:49', 'Arduino starter-kit.jpg'),
 (24, 'Nano Family', 'The Nano Family is a set of boards with a tiny footprint, packed with features. It ranges from the inexpensive, basic Nano Every, to the more feature-packed Nano 33 BLE Sense / Nano RP2040 Connect that has Bluetooth® / Wi-Fi radio modules. These boards also have a set of embedded sensors, such as temperature/humidity, pressure, gesture, microphone and more. They can also be programmed with MicroPython and supports Machine Learning.', '2023-01-02 15:09:19', '2023-01-02 15:09:19', 'Arduino nano-33-ble.jpg'),
 (25, 'MKR Family', 'The MKR Family is a series of boards, shields & carriers that can be combined to create amazing projects without any additional circuitry. Each board is equipped with a radio module , that enables Wi-Fi communication. All boards in the family are based on the Cortex-M0 32-bit SAMD21 low power processor, and are equipped with a crypto chip for secure communication.  The MKR Family shields & carriers are designed to extend the functions of the board.\r\n', '2023-01-02 15:09:46', '2023-01-02 15:09:46', 'Arduino-mkr_1000_wifi.jpg'),
 (26, 'Classic Family', 'In the Classic Family, you will find boards such as the legendary Arduino UNO and other classics such as the Leonardo & Micro. These boards are considered the backbone of the Arduino project, and has been a success for many years (and more to come).', '2023-01-02 15:13:43', '2023-01-02 15:13:43', 'Arduino-leonardo.jpg');
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 -- --------------------------------------------------------
 
@@ -96,6 +118,16 @@ CREATE TABLE `messages` (
   `message` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+<<<<<<< HEAD
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `user_id`, `name`, `email`, `number`, `message`) VALUES
+(1, 2, 'ali572 mhamdgmail.co', 'mhamd@gmail.com', '7532573757', 'dfsfsddhdfgfdgfdgfdsgfdsgsdf');
+
+=======
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 -- --------------------------------------------------------
 
 --
@@ -116,6 +148,16 @@ CREATE TABLE `orders` (
   `payment_status` varchar(20) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+<<<<<<< HEAD
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `method`, `address`, `total_products`, `total_price`, `placed_on`, `payment_status`) VALUES
+(3, 2, 'ali naser', '7575727527', 'mhamd@gmail.com', 'credit card', 'flat no. aqaba, eightth, aqaba, 5727275, Jordan - 77110', 'sadasda (4755 x 1) - ali naser (4527 x 1) - ', 9282, '2023-01-02', 'pending');
+
+=======
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 -- --------------------------------------------------------
 
 --
@@ -130,15 +172,24 @@ CREATE TABLE `products` (
   `image_01` varchar(100) NOT NULL,
   `image_02` varchar(100) NOT NULL,
   `image_03` varchar(100) NOT NULL,
+<<<<<<< HEAD
+  `category` varchar(255) NOT NULL
+=======
   `category_name` varchar(255) NOT NULL,
   `on_sale` tinyint(1) NOT NULL,
   `new_price` float NOT NULL
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
 --
 
+<<<<<<< HEAD
+INSERT INTO `products` (`id`, `name`, `details`, `price`, `image_01`, `image_02`, `image_03`, `category`) VALUES
+(26, 'ali naserhh', '1212', 1212, '1274158[9].jpg', '1024846.jpg', '3160DQHOFLL._AC_SY1000_.jpg', 'karam'),
+(27, 'ali naser', 'dsfadsfadsfdsfadsfadsfsdaf', 25, 'dog-cat-fish.webp', 'dog_thumb_1644498337052_1644498346070.webp', 'American-Bulldog-standing-in-three-quarter-view.jpg', 'jack');
+=======
 INSERT INTO `products` (`id`, `name`, `details`, `price`, `image_01`, `image_02`, `image_03`, `category_name`, `on_sale`, `new_price`) VALUES
 (28, 'Arduino Starter Kit ', 'Get started with electronics quickly and easily - no prior experience required. ', 96, 'Arduino starter-kit.jpg', 'Arduino starter-kit.jpg', 'Arduino starter-kit.jpg', 'Kits', 1, 80),
 (29, 'Arduino Oplà IoT Kit                                                                                ', 'Add smart technology to your home and workplace with the first Open programmable IoT platform that allows you to build custom IoT devices.', 118, 'Arduino opla-iot-kit.jpg', 'Arduino opla-iot-kit.jpg', 'Arduino opla-iot-kit.jpg', 'Kits', 0, 0),
@@ -177,6 +228,7 @@ INSERT INTO `products` (`id`, `name`, `details`, `price`, `image_01`, `image_02`
 (62, 'Arduino Motor Shield Rev3', 'The Arduino Motor Shield allows your arduino to drive DC and stepper motors, relays and solenoids.', 28, 'Arduino-motor-shield-rev3.jpg', 'Arduino-motor-shield-rev3.jpg', 'Arduino-motor-shield-rev3.jpg', 'Classic Family', 0, 0),
 (63, 'Arduino 4 Relays Shield', 'The Arduino 4 Relays Shield allows your Arduino driving high power loads.', 28, 'Arduino-4-relay-shield.jpg', 'Arduino-4-relay-shield.jpg', 'Arduino-4-relay-shield.jpg', 'Classic Family', 0, 0),
 (64, 'Arduino Ethernet Shield 2', 'The Arduino Ethernet Shield 2 connects your Arduino to the internet', 30, 'Arduino-ethernet-shield-rev2.jpg', 'Arduino-ethernet-shield-rev2.jpg', 'Arduino-ethernet-shield-rev2.jpg', 'Classic Family', 0, 0);
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 -- --------------------------------------------------------
 
@@ -185,7 +237,11 @@ INSERT INTO `products` (`id`, `name`, `details`, `price`, `image_01`, `image_02`
 --
 
 CREATE TABLE `users` (
+<<<<<<< HEAD
+  `id` int(100) NOT NULL,
+=======
   `id` int(10) NOT NULL,
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
   `name` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
@@ -196,8 +252,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
+<<<<<<< HEAD
+(1, 'muhammed', 'nmhammed50@gmail.com', '7d7ce76ed0aa112c7056a56887623ea79c28ae3a'),
+(2, 'admin', 'mhamd@gmail.com', '6216f8a75fd5bb3d5f22b6f9958cdede3fc086c2');
+=======
 (1, 'noorelhudaibrahim', 'noorelhudaibrahimalshebailat@gmail.com', 'e176ef75a45aa6e356c672ac2f8e69676e1c1ee5'),
 (7, 'noorelhudaibrahim', 'noorelhudaibrahimalshebailat@gmail.com', 'e176ef75a45aa6e356c672ac2f8e69676e1c1ee5');
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 -- --------------------------------------------------------
 
@@ -228,9 +289,13 @@ ALTER TABLE `admins`
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
+<<<<<<< HEAD
+  ADD PRIMARY KEY (`id`);
+=======
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `pid` (`pid`);
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 --
 -- Indexes for table `category`
@@ -242,22 +307,34 @@ ALTER TABLE `category`
 -- Indexes for table `messages`
 --
 ALTER TABLE `messages`
+<<<<<<< HEAD
+  ADD PRIMARY KEY (`id`);
+=======
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 --
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
+<<<<<<< HEAD
+  ADD PRIMARY KEY (`id`);
+=======
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 --
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
+<<<<<<< HEAD
+  ADD PRIMARY KEY (`id`);
+=======
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_name` (`category_name`);
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 --
 -- Indexes for table `users`
@@ -269,9 +346,13 @@ ALTER TABLE `users`
 -- Indexes for table `wishlist`
 --
 ALTER TABLE `wishlist`
+<<<<<<< HEAD
+  ADD PRIMARY KEY (`id`);
+=======
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `pid` (`pid`);
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -287,13 +368,21 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
+<<<<<<< HEAD
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+=======
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
+<<<<<<< HEAD
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+=======
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -311,18 +400,29 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
+<<<<<<< HEAD
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+=======
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
+<<<<<<< HEAD
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+=======
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 --
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
+<<<<<<< HEAD
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+=======
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -354,6 +454,7 @@ ALTER TABLE `orders`
 ALTER TABLE `wishlist`
   ADD CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `wishlist_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `products` (`id`);
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -20,7 +20,10 @@
       <nav class="navbar">
          <a href="../admin/dashboard.php">home</a>
          <a href="../admin/products.php">products</a>
+<<<<<<< HEAD
+=======
          <a href="../admin/category.php">category</a>
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
          <a href="../admin/placed_orders.php">orders</a>
          <a href="../admin/admin_accounts.php">admins</a>
          <a href="../admin/users_accounts.php">users</a>

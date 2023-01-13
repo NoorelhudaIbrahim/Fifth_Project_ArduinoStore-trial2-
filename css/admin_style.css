@@ -291,7 +291,10 @@ section{
 
 .dashboard .box-container .box h3 span{
    font-size: 2rem;
+<<<<<<< HEAD
+=======
    overflow: hidden;
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
 }
 
 .dashboard .box-container .box p{
@@ -301,7 +304,10 @@ section{
    font-size: 1.7rem;
    color:var(--light-color);
    margin:1rem 0;
+<<<<<<< HEAD
+=======
    overflow: hidden;
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
 }
 
 .add-products form{
@@ -381,6 +387,8 @@ section{
    font-size: 1.5rem;
    color:var(--light-color);
    line-height: 2;
+<<<<<<< HEAD
+=======
    overflow: hidden;
 }
 
@@ -462,6 +470,7 @@ section{
    color:var(--light-color);
    line-height: 2;
    overflow: hidden;
+>>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
 }
 
 .update-product form{

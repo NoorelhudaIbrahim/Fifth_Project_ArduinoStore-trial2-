@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+
+:root{
+   --main-color:#2980b9;
+
 @import url('https://fonts.googleapis.com/css2?family=Seymour+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap'); 
 
 :root{
    --main-color:#117693;
+
    --orange:#f39c12;
    --red:#e74c3c;
    --black:#333;
@@ -15,14 +21,17 @@
 }
 
 *{
+
+   font-family: 'Nunito', sans-serif;
+
    /* font-family: 'Nunito', sans-serif; */
    font-family: 'PT Serif', serif;
+
    margin:0; padding:0;
    box-sizing: border-box;
    outline: none; border:none;
    text-decoration: none;
 
-  
 }
 
 *::selection{
@@ -49,6 +58,22 @@ html{
 }
 
 
+body{
+   background-color: var(--light-bg);
+}
+
+section{
+   padding:2rem;
+   max-width: 1200px;
+   margin:0 auto;
+}
+
+.heading{
+   font-size: 4rem;
+   color:var(--black);
+   margin-bottom: 2rem;
+
+
 
 section{
    padding:0.5rem;
@@ -64,6 +89,7 @@ section{
    color:#117693;
    margin-top:7rem; 
    margin-bottom: 5rem;
+
    text-align: center;
    text-transform: uppercase;
 }
@@ -86,19 +112,30 @@ section{
 .btn:hover,
 .delete-btn:hover,
 .option-btn:hover{
+
+   background-color: var(--black);
+
    background-color:white;
    color: #165168;
    border: 1px #165168 solid;
+
 
 }
 
 .btn{
    background-color: var(--main-color);
+
+}
+
+.option-btn{
+   background-color: var(--orange);
+
    color: white;
 }
 
 .option-btn{
    background-color: #165168;
+
 }
 
 .delete-btn{
@@ -149,8 +186,13 @@ section{
    border-radius: .5rem;
    font-size: 2rem;
    text-transform: capitalize;
+
+   margin-left:40%;
+
    /* margin-left:40%; */
+
    margin-bottom: 16rem;
+
 }
 
 .disabled{
@@ -164,6 +206,7 @@ section{
       transform: translateY(1rem);
    }
 }
+
 .noor{
    margin-left: 25%;
    margin-bottom:10px;
@@ -182,13 +225,20 @@ span .fa-solid{
    color:black;
 }
 
+
 .header{
    position: sticky;
    top:0; left:0; right:0;
+
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   z-index: 1000;
+
    box-shadow: var(--box-shadow);
    background-color:#117693;
    z-index: 1000;
    
+
 }
 
 .header .flex{
@@ -210,6 +260,23 @@ span .fa-solid{
 
 .header .flex .navbar a{
    margin:0 1rem;
+   font-size: 2rem;
+   color:var(--black);
+}
+
+.header .flex .navbar a:hover{
+   color:var(--main-color);
+   text-decoration: underline;
+}
+
+
+.header .flex .icons > *{
+   margin-left: 1rem;
+   font-size: 2.5rem;
+
+
+.header .flex .navbar a{
+   margin:0 1rem;
    font-family: 'PT Serif', serif;
    font-size: 2rem;
    color:var(--white);
@@ -223,6 +290,7 @@ span .fa-solid{
 .header .flex .icons > *{
    margin-left: 1rem;
    font-size: 1.7rem;
+
    cursor: pointer;
    color:var(--black);
 }
@@ -232,8 +300,12 @@ span .fa-solid{
 }
 
 .header .flex .icons a span{
+
+   font-size: 2rem;
+
    font-size: 1.2rem;
    color:#fff !important;
+
 }
 
 .header .flex .profile{
@@ -256,13 +328,26 @@ span .fa-solid{
 
 .header .flex .profile p{
    text-align: center;
+
+   color:var(--black);
+   font-size: 2rem;
+
    color:#165168;
    font-size: 1.5rem;
+
    margin-bottom: 1rem;
 }
 
 #menu-btn{
    display: none;
+
+}
+
+.home-bg{
+   background:url(../images/home-bg.png) no-repeat;
+   background-size: cover;
+   background-position: center;
+
    
 }
 
@@ -272,6 +357,7 @@ span .fa-solid{
    background-position: center;
    height: 700px;
    margin-top: -5px;
+
 }
 
 .home-bg .home .slide{
@@ -297,6 +383,12 @@ span .fa-solid{
 .home-bg .home .slide .content{
    flex:1 1 40rem;
 }
+
+
+.home-bg .home .slide .content span{
+   font-size: 2rem;
+   color:var(--white);
+
 .navbar a{
    /* justify-content: center; */
    padding:0px;
@@ -304,12 +396,17 @@ span .fa-solid{
 .home-bg .home .slide .content span{
    font-size: 2rem;
    color:#117693;
+
 }
 
 .home-bg .home .slide .content h3{
    margin-top: 1rem;
    font-size: 4rem;
+
+   color:var(--white);
+
    color:#117693;
+
    text-transform: uppercase;
 }
 
@@ -319,10 +416,14 @@ span .fa-solid{
 }
 
 .swiper-pagination-bullet-active{
+
+   background-color: var(--main-color);
+
    background-color: var(--white);
 }
 .category{
    margin-top: 50px;
+
 }
 
 .category .slide{
@@ -361,9 +462,14 @@ span .fa-solid{
    user-select: none;
 }
 
+
+.home-products{
+
+
 .home-products{
    margin-top:70px;
 }
+
 
 .home-products .slide{
    position: relative;
@@ -510,16 +616,28 @@ span .fa-solid{
 }
 
 .quick-view form .row .content .name{
+
+   font-size: 2rem;
+
    font-size: 4rem !important;
+
    color:var(--black);
 }
 
 .quick-view form .row .flex{
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap:1rem;
+   margin:1rem 0;
+
    /* display: flex;
    align-items: center;
    justify-content: space-between; */
    gap:1rem;
    margin:0rem 0;
+
 }
 
 .quick-view form .row .flex .qty{
@@ -618,8 +736,13 @@ span .fa-solid{
 }
 
 .products .box-container .box .flex .qty{
+
+   width: 7rem;
+   padding:1rem;
+
    width: 5rem;
    padding:0.5rem;
+
    border:var(--border);
    font-size: 1.8rem;
    color:var(--black);
@@ -633,6 +756,15 @@ span .fa-solid{
 }
 
 .form-container form{
+
+   background-color: var(--white);
+   padding:2rem;
+   border-radius: .5rem;
+   border:var(--border);
+   box-shadow: var(--box-shadow);
+   text-align: center;
+   margin:0 auto;
+
    /* background-color: #00000042; */
    padding:2rem;
    /* border-radius: .5rem; */
@@ -641,6 +773,7 @@ span .fa-solid{
    text-align: center;
    margin:30px auto ;
    margin-right:10px;
+
    max-width: 50rem;
 }
 
@@ -652,18 +785,31 @@ span .fa-solid{
 
 .form-container form p{
    font-size: 2rem;
+
+   color:var(--light-color);
+
    color:white;
+
    margin:1.5rem 0;
 }
 
 .form-container form .box{
    margin:1rem 0;
+
+   background-color: var(--light-bg);
+
    padding:1.4rem;
    font-size: 1.8rem;
    color:var(--black);  
    width: 100%;
+
+   border-radius: .5rem;
+}
+
+
    border-bottom: 1px black  solid !important;
 }
+
 
 
 .about .row{
@@ -671,9 +817,11 @@ span .fa-solid{
    align-items: center;
    flex-wrap: wrap;
    gap:1.5rem;
+
    text-align: center;
    margin-top: 50px; 
    
+
 }
 
 .about .row .image{
@@ -695,7 +843,11 @@ span .fa-solid{
 
 .about .row .content p{
    line-height: 2;
+
+   font-size: 1.5rem;
+
    font-size: 2rem;
+
    color:var(--light-color);
    padding:1rem 0;
 }
@@ -753,6 +905,12 @@ span .fa-solid{
    padding:2rem;
    text-align: center;
    background-color: var(--white);
+
+   box-shadow: var(--box-shadow);
+   border-radius: .5rem;
+   border:var(--border);
+
+
    max-width: 50rem;
    margin:0 auto;
 }
@@ -766,11 +924,20 @@ span .fa-solid{
 
 .contact form .box{
    margin:1rem 0;
+
+   width: 100%;
+   background-color: var(--light-bg);
+   padding:1.4rem;
+   font-size: 1.8rem;
+   color:var(--black);
+   border-radius: .5rem;
+
    padding:1.4rem;
    font-size: 1.8rem;
    color:var(--black);  
    width: 100%;
    border-bottom: 1px black  solid !important;
+
 }
 
 .contact form textarea{
@@ -969,10 +1136,14 @@ span .fa-solid{
    box-shadow: var(--box-shadow);
    border-radius: .5rem;
 }
+
+
+
 .fas .fa-eye{
    color:black;
 
 }
+
 .orders .box-container .box p{
    margin:.5rem 0;
    line-height: 1.8;
@@ -985,6 +1156,10 @@ span .fa-solid{
 }
 
 .footer{
+
+   background-color: var(--white);
+   /* padding-bottom: 7rem; */
+
    background-color: #165168 !important;
    position: relative;
    bottom: 0px;
@@ -993,6 +1168,7 @@ span .fa-solid{
    padding-left: 10em;
    margin-top: 3em;
    
+
 }
 
 .footer .grid{
@@ -1014,6 +1190,13 @@ span .fa-solid{
    margin:1.5rem 0;
    font-size: 1.7rem;
    color:var(--light-color);
+
+}
+
+.footer .grid .box a i{
+   padding-right: 1rem;
+   color:var(--main-color);
+
    color:white !important ;
 }
 
@@ -1028,6 +1211,7 @@ span .fa-solid{
 .footer .grid .box a i{
    padding-right: 1rem;
    color:white !important;
+
    transition: .2s linear;
 }
 
@@ -1075,7 +1259,11 @@ span .fa-solid{
       top:99%; left:0; right:0;
       border-top: var(--border);
       border-bottom: var(--border);
+
+      background-color: var(--white);
+
       /* background-color: rgb(5, 81, 81) !important; */
+
       transition: .2s linear;
       clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
    }
