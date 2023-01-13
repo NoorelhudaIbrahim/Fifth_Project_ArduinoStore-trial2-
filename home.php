@@ -64,19 +64,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
       }
 
       .swiper-slide img {
-         width: 200px !important;
-         height:200px !important;
+         width:100% !important;
+         height:50% !important;
+      
       }
      
-
-         
       .swiper-slide h3 {
          background-color: #117693;
          color: white !important;
 
          display: block;
          width: 100%;
-         margin-top: 1rem;
+         margin-top: 15rem;
          border-radius: 0.5rem;
          padding: 1rem 3rem;
          font-size: 1.7rem;
@@ -142,15 +141,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
       .btn{
         
          background-color:#117693;
-
       }
 
       .video{
-         height: 100%;
-         width: 100%;
+         height:100%;
+         width:100%;
       }
     
-
+  
    </style>
 
 </head>
@@ -162,7 +160,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
 
    <div class="home">
    <div> 
-      <video src="https://www.datocms-assets.com/76605/1668676208-banner-handbrake.webm"  muted autoplay class="video"></video>
+      <video src="https://www.datocms-assets.com/76605/1668676208-banner-handbrake.webm"  muted autoplay loop class="video"></video>
    </div>
       
       <!-- <div class="swiper home-slider"> 
