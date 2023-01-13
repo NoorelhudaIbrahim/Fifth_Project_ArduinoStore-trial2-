@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
        body{
             background-image: url("project images/Untitled__5_-removebg-preview.png");
             background-repeat: no-repeat;
-            background-size: 53%;
+            background-size: 57%;
          }
          input{
             background-color: none !important;
@@ -133,6 +133,12 @@ if(isset($_POST['submit'])){
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+
+
 <?php include 'components/footer.php'; ?>
 
 <script src="js/script.js"></script>

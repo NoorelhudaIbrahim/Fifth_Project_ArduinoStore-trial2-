@@ -5,6 +5,7 @@
    .footer{
       padding: 0px;
       margin: 0px;
+      /* position: absolute; */
  
    }
 
