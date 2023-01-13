@@ -85,13 +85,13 @@ section{
    margin:0 auto;
 }
 .swiper-slide {
-   width: 50px;
+   width: 50px ;
 }
 
 .heading{
    font-size: 3rem;
    color:#117693;
-   margin-top:-3rem;
+   margin-top:7rem; 
    margin-bottom: 5rem;
 >>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
    text-align: center;
@@ -191,8 +191,12 @@ section{
    font-size: 2rem;
    text-transform: capitalize;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
    margin-left:40%;
+=======
+   /* margin-left:40%; */
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
    margin-bottom: 16rem;
 >>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
 }
@@ -430,7 +434,7 @@ span .fa-solid{
 }
 
 .category .slide{
-   margin-bottom: 5rem;
+   margin-bottom:2rem  !important; 
    box-shadow: var(--box-shadow);
    border:var(--border);
    text-align: center;

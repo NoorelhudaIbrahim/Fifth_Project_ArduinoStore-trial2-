@@ -1,84 +1,109 @@
-<?php
 
-include '../components/connect.php';
-
-session_start();
-
-$admin_id = $_SESSION['admin_id'];
-
-if(!isset($admin_id)){
-   header('location:admin_login.php');
-};
-
-if(isset($_GET['delete'])){
-   $delete_id = $_GET['delete'];
-   $delete_message = $conn->prepare("DELETE FROM `messages` WHERE id = ?");
-   $delete_message->execute([$delete_id]);
-   header('location:messages.php');
-}
+<?php require_once('./connectdb.php');
+require_once('./sidebar.php');
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>messages</title>
-
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-   <link rel="stylesheet" href="../css/admin_style.css">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+
+
 <body>
-
-<?php include '../components/admin_header.php'; ?>
-
-<section class="contacts">
-
-<h1 class="heading">messages</h1>
-
-<div class="box-container">
-
-   <?php
-      $select_messages = $conn->prepare("SELECT * FROM `messages`");
-      $select_messages->execute();
-      if($select_messages->rowCount() > 0){
-         while($fetch_message = $select_messages->fetch(PDO::FETCH_ASSOC)){
-   ?>
-   <div class="box">
-   <p> user id : <span><?= $fetch_message['user_id']; ?></span></p>
-   <p> name : <span><?= $fetch_message['name']; ?></span></p>
-   <p> email : <span><?= $fetch_message['email']; ?></span></p>
-   <p> number : <span><?= $fetch_message['number']; ?></span></p>
-   <p> message : <span><?= $fetch_message['message']; ?></span></p>
-   <a href="messages.php??delete=<?= $fetch_message['id']; ?>" onclick="return confirm('delete this message?');" class="delete-btn">delete</a>
-   </div>
-   <?php
-         }
-      }else{
-         echo '<p class="empty">you have no messages</p>';
-      }
-   ?>
-
+<div class="page-container">
+    <div  id="container-hide">
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- <div class="col-md-12 pb-4">
+                        <button type="submit" value="add product" class="btn btn-success btn-md" onclick="showadd()">Add New Product</button>
+                    </div> -->
+                    <div class="col-md-12">
+                        <div class="table-responsive m-b-40">
+                            <table class="table table-borderless table-data3 table-earning">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th class="text-center">NAME</th>
+                                        <th class="text-center">PHONE NO.</th>
+                                        <th class="text-center">EMAIL</th>
+                                        <th class="text-center">MESSAGE</th>
+                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        $select_orders = $conn->prepare("SELECT * FROM `messages`"); 
+                                        $select_orders->execute();
+                                        if($select_orders->rowCount() > 0){
+                                            while($fetch_orders = $select_orders->fetch(PDO::FETCH_ASSOC)){ 
+                                    ?>
+                                    <tr class="tr-shadow">
+                                       
+                                        <td class="align-middle text-center"><?= $fetch_orders['name']; ?></td>
+                                        <td class="align-middle text-center"><?= $fetch_orders['number']; ?></td>
+                                        <td class="align-middle text-center"><?= $fetch_orders['email']; ?></td>
+                                         <td class="align-middle text-center"><?= $fetch_orders['message']; ?></td>
+                                      
+                                            
+                                        
+                                    </tr>
+                                    <?php
+                                        }
+                                    }else{
+                                        echo '<p class="empty">no orders added yet!</p>';
+                                    }?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- END DATA TABLE -->
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
 </div>
-
-</section>
-
+                                
 
 
 
-
-
-
-
-
-
-
-
-<script src="../js/admin_script.js"></script>
+<?php include('./footer.php'); ?>
+    
+       <!-- Jquery JS-->
+       <script src="vendor/jquery-3.2.1.min.js"></script>
+       <!-- Bootstrap JS-->
+       <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+       <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+       <!-- Vendor JS       -->
+       <script src="vendor/slick/slick.min.js">
+       </script>
+       <script src="vendor/wow/wow.min.js"></script>
+       <script src="vendor/animsition/animsition.min.js"></script>
+       <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+       </script>
+       <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+       <script src="vendor/counter-up/jquery.counterup.min.js">
+       </script>
+       <script src="vendor/circle-progress/circle-progress.min.js"></script>
+       <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+       <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+       <script src="vendor/select2/select2.min.js">
+       </script>
    
-</body>
-</html>
+       <!-- Main JS-->
+       <script src="js/main.js"></script>
+     
+  
+   </body>
+   
+   </html>
+   <!-- end document-->
+   

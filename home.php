@@ -10,7 +10,19 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
 };
 
-include 'components/wishlist_cart.php';
+if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['addTOcart'])){
+   $product_id = $_POST['product_id'];
+   $product_name = $_POST['name'];
+   $product_price = $_POST['price'];
+   $product_image = $_POST['image'];
+   $product_quantity = $_POST['quantity'];
+
+   $send_to_cart = $conn->prepare("INSERT INTO `cart` (user_id , pid , name , price , image , quantity) VALUES (? , ? , ? , ?, ? , ?)"); 
+   $send_to_cart->execute([$user_id , $product_id , $product_name , $product_price, $product_image, $product_quantity]);
+
+}
+
+// include 'components/wishlist_cart.php';
 
 ?>
 
@@ -41,29 +53,77 @@ include 'components/wishlist_cart.php';
          background-image:url('project images/Untitled__8_-removebg-preview.png');
          background-repeat: no-repeat;
          background-size: 70%;
+         /* height:50em; */
+
+
+         height:35em;
+
          height:50em;
+ 
+
       }
+
+      .swiper-slide img {
+         width: 200px !important;
+         height:200px !important;
+      }
+     
+
          
+      .swiper-slide h3 {
+         background-color: #117693;
+         color: white !important;
+
+         display: block;
+         width: 100%;
+         margin-top: 1rem;
+         border-radius: 0.5rem;
+         padding: 1rem 3rem;
+         font-size: 1.7rem;
+         text-transform: capitalize;
+         color: var(--white);
+         cursor: pointer;
+         text-align: center;
+
+      }
+
+      .swiper-slide h3,.swiper-slide img,a:hover{
+         background-color: none !important;
+      }
+
+      .swiper-slide h3:hover{
+         background-color: white;
+         color: #117693 !important;
+         border: 1px #117693 solid;
+      }
+
+      
       .imge_hoda_noor{
          background-image:url('images/bg33.jpg') !important;   
-         background-size: 115.5%;
+         background-size: 100%;
          background-repeat: no-repeat;
-         /* height: 150% !important; */
+         height: 30% !important;
       }
       .img1{
-         background-image:url('images/ai.png') !important;
-         background-size: 130%;
+         background-image:url('images/Untitled\ design\ \(1\).png') !important;
+         background-size: 100%;
          background-repeat: no-repeat;
+         height: 150% !important;
+
       }
       .img2{
-         background-image:url('images/learning.jpg') !important;
-         background-size: 130%;
+         background-image:url('images/Untitled\ design\ \(1\).png') !important;
+         background-size: 100%;
          background-repeat: no-repeat;
+         height: 150% !important;
+
       }
       .img3{
          background-image:url('images/33.jpeg') !important;
          background-size: 130%;
          background-repeat: no-repeat;
+         height: 150% !important;
+
       }
       .sale {
          margin-left :20px;
@@ -84,7 +144,12 @@ include 'components/wishlist_cart.php';
          background-color:#117693;
 
       }
-      
+
+      .video{
+         height: 100%;
+         width: 100%;
+      }
+    
 
    </style>
 
@@ -96,8 +161,11 @@ include 'components/wishlist_cart.php';
 <div class="home-bg">
 
    <div class="home">
-
-      <div class="swiper home-slider">
+   <div> 
+      <video src="https://www.datocms-assets.com/76605/1668676208-banner-handbrake.webm"  muted autoplay class="video"></video>
+   </div>
+      
+      <!-- <div class="swiper home-slider"> 
       
          <div class="swiper-wrapper">
 
@@ -107,141 +175,174 @@ include 'components/wishlist_cart.php';
                   <h3>Discover <br>the power of AI</h3>
                   <a href="shop.php" class="btn">shop now</a>
                </div>
-            </div>
+            </div> --> 
 
-            <div class="swiper-slide slide img1">
-               <!-- <div class="image">
+             <!-- <div class="swiper-slide slide img1">
+                <div class="image">
                   <img src="images/1.png" alt="">
-               </div> -->
+               </div> 
                <div class="content sale2" style="margin-left:41%; margin-top:10%;">
-                  <span style="color:white;">up to 50% off</span>
-                  <h3 style="color:white;">Discover <br> the power of AI</h3>
+                  <span>up to 50% off</span>
+                  <h3>Discover <br>the power of AI</h3>
+                  <a href="shop.php" class="btn">shop now</a>
+               </div>
+            </div> -->
+
+            <!-- <div class="swiper-slide slide img2"> 
+                <div class="image">
+                  <img src="images/from-human.png" alt="0">
+               </div> 
+               <div class="content sale2" style="margin-left:-13rem; ">
+                  <span>up to 50% off</span>
+                  <h3>Discover <br>the power of AI</h3>
+                  <a href="shop.php" class="btn">shop now</a>
+               </div>
+            </div> -->
+
+            <!-- <div class="swiper-slide slide img3"> 
+               <div class="image">
+                  <img src="images/to-machine.png" alt="">
+               </div> 
+               <div class="content sale2" style="margin-left:-13rem;">
+
+                   <span>up to 50% off</span>
+                  <h3>Discover <br>the power of AI</h3>
                   <a href="shop.php" class="btn">shop now</a>
                </div>
             </div>
-
-            <div class="swiper-slide slide img2">
-               <!-- <div class="image">
-                  <img src="images/from-human.png" alt="0">
-               </div> -->
-               <div class="content sale2" style="margin-left:-13rem; ">
-                  <span style="color:#103848;">up to 50% off</span>
-                  <h3 style="color:#103848;">AI is going to <br>change the world!</h3>
-                  <a href="shop.php" class="btn" style="background-color:#103848;">shop now</a>
-               </div>
-            </div>
-
-            <div class="swiper-slide slide img3">
-               <!-- <div class="image">
-                  <img src="images/to-machine.png" alt="">
-               </div> -->
-               <div class="content sale2" style="margin-left:-13rem;">
-
-                  <span style="color:white;">upto 50% off</span>
-                  <h3 style="color:white;">From human to machine <br>and back again!</h3>
-                  <a href="shop.php" class="btn" style="background-color:white;color:#103848;">shop now</a>
-               </div>
-            </div>
-
          </div>
-
          <div class="swiper-pagination"></div>
-
-      </div>
-
-   </section>
-
+      </div>  -->
+ 
 </div>
-<div >
 
-<!-- <section class="category" >
+<div>
+
+            <!-- Add section Discount -->
+                         
+   <section class="category" >
+
+<div >
+<!-- -----------------------------------category---------------------------------------------------- -->
+<section class="category">
+
 
    <h1 class="heading">shop by category</h1>
 
-   <div class="swiper category-slider">
+
+   <div class="swiper category-slider" >
 
    <div class="swiper-wrapper">
 
-   <a href="category.php?category=laptop" class="swiper-slide slide">
-      <img src="images/icon-1.png" alt="">
-      <h3>laptop</h3>
+
+
+   <a href="category.php?category=Kits" class="swiper-slide slide">
+      <img src="uploaded_img/Arduino starter-kit.jpg" alt="">
+      <h3>Kits</h3>
    </a>
 
-   <a href="category.php?category=tv" class="swiper-slide slide">
-      <img src="images/icon-2.png" alt="">
-      <h3>tv</h3>
+   <a href="category.php?category=Nano Family" class="swiper-slide slide">
+      <img src="uploaded_img/Arduino nano-33-ble.jpg" alt="">
+      <h3>Nano Family</h3>
    </a>
 
-   <a href="category.php?category=camera" class="swiper-slide slide">
-      <img src="images/icon-3.png" alt="">
-      <h3>camera</h3>
+   <a href="category.php?category=MKR Family" class="swiper-slide slide">
+      <img src="uploaded_img/Arduino-mkr_1000_wifi.jpg" alt="">
+      <h3>MKR Family</h3>
    </a>
 
-   <a href="category.php?category=mouse" class="swiper-slide slide">
-      <img src="images/icon-4.png" alt="">
-      <h3>mouse</h3>
-   </a>
-
-   <a href="category.php?category=fridge" class="swiper-slide slide">
-      <img src="images/icon-5.png" alt="">
-      <h3>fridge</h3>
-   </a>
-
-   <a href="category.php?category=washing" class="swiper-slide slide">
-      <img src="images/icon-6.png" alt="">
-      <h3>washing machine</h3>
-   </a>
-
-   <a href="category.php?category=smartphone" class="swiper-slide slide">
-      <img src="images/icon-7.png" alt="">
-      <h3>smartphone</h3>
-   </a>
-
-   <a href="category.php?category=watch" class="swiper-slide slide">
-      <img src="images/icon-8.png" alt="">
-      <h3>watch</h3>
+   <a href="category.php?category=Classic Family" class="swiper-slide slide">
+      <img src="uploaded_img/Arduino-leonardo.jpg" alt="">
+      <h3>Classic Family</h3>
    </a>
 
    </div>
-
-   <div class="swiper-pagination"></div>
-
+       <div class="swiper-pagination"></div>
    </div>
 
-</section> -->
 
+
+</section>
+
+</section>
+
+<!-- -------------------------------------------------------------------------------- -->
+
+
+<!-- ---------------------sales product----------------------------------- -->
 <section class="home-products">
 
-   <h1 class="heading">latest products</h1>
+   <h1 class="heading">Sales Product</h1>
 
    <div class="swiper products-slider">
 
    <div class="swiper-wrapper">
 
    <?php
-     $select_products = $conn->prepare("SELECT * FROM `products` LIMIT 6"); 
+
+     $select_products = $conn->prepare("SELECT * FROM `products` LIMIT 6 "); 
+
+     $select_products = $conn->prepare("SELECT * FROM `products` WHERE on_sale='1'"); 
+
      $select_products->execute();
      if($select_products->rowCount() > 0){
       while($fetch_product = $select_products->fetch(PDO::FETCH_ASSOC)){
+         $i=0;
    ?>
-   <form action="" method="post" class="swiper-slide slide">
-      <input type="hidden" name="pid" value="<?= $fetch_product['id']; ?>">
+   <form action="" method="post" class="swiper-slide slide" style="height:430px">
+      <input type="hidden" name="product_id" value="<?= $fetch_product['id']; ?>">
       <input type="hidden" name="name" value="<?= $fetch_product['name']; ?>">
-      <input type="hidden" name="price" value="<?= $fetch_product['price']; ?>">
+      <?php 
+      if ($fetch_product['on_sale'] == 1){
+         ?>
+         <input type="hidden" name="price" value="<?=$fetch_product['new_price'];?>">
+         <?php
+      } else {
+         ?>
+         <input type="hidden" name="price" value="<?=$fetch_product['price'];?>">
+         <?php
+      }
+      ?>
       <input type="hidden" name="image" value="<?= $fetch_product['image_01']; ?>">
-      <button class="fas fa-heart" type="submit" name="add_to_wishlist"></button>
       <a href="quick_view.php?pid=<?= $fetch_product['id']; ?>" class="fas fa-eye"></a>
       <img src="uploaded_img/<?= $fetch_product['image_01']; ?>" alt="">
-      <div class="name"><?= $fetch_product['name']; ?><br>
-         <span style="color: #247580;"><?= $fetch_product['category_name']; ?></span>
-      </div>
-      <!-- <div class="category"></div> -->
+      <div class="name"><?= $fetch_product['name']; ?></div>
+      <?php $product_category = $conn->prepare("SELECT * FROM products INNER JOIN category ON products.category_name = category.category_id");
+                  $product_category->execute();
+                  if($product_category->rowCount() > 0){
+                     while($fetch_product_category = $product_category->fetch(PDO::FETCH_ASSOC)){ 
+                        if($i==0 && $fetch_product['category_name'] == $fetch_product_category['category_id'] ){
+                        $i++;
+            ?>
+                  <?= $fetch_product_category['category_id']; ?>
+            <?php 
+                        }
+                     }
+                  }
+            ?>
       <div class="flex">
-         <div class="price"><span>$</span><?= $fetch_product['price']; ?><span>/-</span></div>
-         <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
+
+         <?php if ($fetch_product['on_sale'] == 1){ ?>
+
+            <div class="price"><span><del style="text-decoration:line-through; color:silver">$<?= $fetch_product['price']; ?></del><ins style="color:#67022f; padding:20px 0px"> $<?=$fetch_product['new_price'];?></ins> </span></div>
+
+         <?php } else { ?>
+
+            <div class="name" style="color:green;">$<?= $fetch_product['price']; ?></div> <?php } ?>
+
+         <?php if ($fetch_product['category_name'] != 'Nano Family'){?>
+
+
+            <input type="number" name="quantity" class="qty" min="1" max="99" value="1">
+
+         <?php } else { ?>
+            <input type="hidden" name="quantity" value="1">
+         <?php } ?> 
+
       </div>
-      <input type="submit" value="add to cart" class="btn" name="add_to_cart">
+      <button type="submit" class="btn" name="addTOcart">Add To Cart</button>
    </form>
+
    <?php
       }
    }else{
@@ -254,10 +355,17 @@ include 'components/wishlist_cart.php';
    <div class="swiper-pagination"></div>
 
    </div>
-</div>
 
 </section>
+
+
+
+
+
+<!-- -----------------advantages--------------------------------------- -->
+
 <section >
+
 <div class="noor">
    <span><i class="fa-solid fa-user-shield"></i></span>
   
@@ -274,8 +382,6 @@ include 'components/wishlist_cart.php';
 </div>
 
 </section>
-
-
 
 
 
@@ -313,9 +419,7 @@ var swiper = new Swiper(".home-slider", {
       768: {
         slidesPerView: 4,
       },
-      1024: {
-        slidesPerView: 5,
-      },
+      
    },
 });
 

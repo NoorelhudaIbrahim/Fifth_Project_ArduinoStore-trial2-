@@ -1,6 +1,6 @@
 <?php
 
-include 'components/connect.php';
+include './components/connect.php';
 
 session_start();
 
@@ -10,35 +10,72 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
 };
 
+// ----------------------------------------------------------------------
+$pass='';
+$cpass='';
+$name='';
+$email='';
+
 if(isset($_POST['submit'])){
 
-   $name = $_POST['name'];
-   $name = filter_var($name, FILTER_SANITIZE_STRING);
-   $email = $_POST['email'];
-   $email = filter_var($email, FILTER_SANITIZE_STRING);
+   // Validate name
+    if(preg_match("/^([a-zA-Z' ]+)$/",$_POST['name'])){  
+        $name= $_POST['name'];
+        $name = htmlspecialchars($name, ENT_QUOTES);
+       }else{
+           $message[]= "Name must contain only alphabets and space";
+       }
+
+   // Validate email
+   if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+      $email = $_POST['email'];
+      $email = htmlspecialchars($email, ENT_QUOTES);
+   }
+   else{
+      $message[] = "Please Enter Your Valid Email Address";
+   }
+   // Validate password
+  if(preg_match('^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$^',$_POST['pass']))
+  {
    $pass = sha1($_POST['pass']);
-   $pass = filter_var($pass, FILTER_SANITIZE_STRING);
-   $cpass = sha1($_POST['cpass']);
-   $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
+     $pass =htmlspecialchars($pass, ENT_QUOTES);
+ 
+  }
+  else 
+  {
+   $message[]='Invalid Password';
+  }
+  
+  $cpass = sha1($_POST['cpass']);
+  $cpass = htmlspecialchars($cpass, ENT_QUOTES);
 
-   $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
-   $select_user->execute([$email,]);
-   $row = $select_user->fetch(PDO::FETCH_ASSOC);
 
-   if($select_user->rowCount() > 0){
-      $message[] = 'email already exists!';
-   }else{
-      if($pass != $cpass){
-         $message[] = 'confirm password not matched!';
+     if($name!='' && $email!='' && $pass!='' && $cpass!='')
+     {
+      $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
+      $select_user->execute([$email,]);
+      $row = $select_user->fetch(PDO::FETCH_ASSOC);
+   
+      if($select_user->rowCount() > 0){
+         $message[] = 'email already exists!';
       }else{
+
          $insert_user = $conn->prepare("INSERT INTO `users`(name, email, password) VALUES(?,?,?)");
          $insert_user->execute([$name, $email, $cpass]);
          $message[] = 'registered successfully, login now please!';
       }
    }
 
-}
+         if( $pass != $cpass){
+            $message[] = 'confirm password not matched!';
+         }
+         else{
+            $insert_user = $conn->prepare("INSERT INTO `users`(name, email, password) VALUES(?,?,?)");
+            $insert_user->execute([$name, $email, $cpass]);
+            $message[] = 'registered successfully, login now please!';
+            header('location: user_login.php');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 // ----------regex using mysqli----------------
@@ -47,37 +84,50 @@ if(isset($_POST['submit'])){
 //    $email = mysqli_real_escape_string($conn, $_POST['email']);
 //    $password = mysqli_real_escape_string($conn, $_POST['password']);
 //    $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']); 
+=======
+         }
+      }
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
+//  ------------before any edit-----------------------------------  
 
-//    if (!preg_match("/^[a-zA-Z ]+$/",$name)) {
-//    $name_error = "Name must contain only alphabets and space";
-//    }
-//    if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
-//    $email_error = "Please Enter Valid Email ID";
-//    }
-//    if(strlen($password) < 6) {
-//    $password_error = "Password must be minimum of 6 characters";
-//    }       
-   
-//    if($password != $cpassword) {
-//    $cpassword_error = "Password and Confirm Password doesn't match";
-//    }
-//    if (!$error) {
-//    if(mysqli_query($conn, "INSERT INTO users(name, email, mobile ,password) VALUES('" . $name . "', '" . $email . "', '" . $mobile . "', '" . md5($password) . "')")) {
-//    header("location: registration.php");
-//    exit();
-//    } else {
-//    echo "Error: " . $sql . "" . mysqli_error($conn);
-//    }
-//    }
-//    mysqli_close($conn);
-//    }
-// ----------regex using pdo----------------
+// if(isset($_POST['submit'])){
 
+<<<<<<< HEAD
    ?>
 >>>>>>> 281448b688c54dfda2ec74280e7d485f8f9cd535
+=======
+//    $name = $_POST['name'];
+//    $name = filter_var($name, FILTER_SANITIZE_STRING);
+//    $email = $_POST['email'];
+//    $email = filter_var($email, FILTER_SANITIZE_STRING);
+//    $pass = sha1($_POST['pass']);
+//    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+//    $cpass = sha1($_POST['cpass']);
+//    $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
+
+//    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
+//    $select_user->execute([$email,]);
+//    $row = $select_user->fetch(PDO::FETCH_ASSOC);
+
+//    if($select_user->rowCount() > 0){
+//       $message[] = 'email already exists!';
+//    }else{
+//       if($pass != $cpass){
+//          $message[] = 'confirm password not matched!';
+//       }else{
+//          $insert_user = $conn->prepare("INSERT INTO `users`(name, email, password) VALUES(?,?,?)");
+//          $insert_user->execute([$name, $email, $cpass]);
+//          $message[] = 'registered successfully, login now please!';
+//       }
+//    }
+
+// }
+// ----------------------------------------------------------
+>>>>>>> a015c45fec0864a23f8850f243e7b1c464c8181c
 
 ?>
+
 
 
 <!DOCTYPE html>
@@ -175,28 +225,21 @@ if(isset($_POST['submit'])){
 
 <section class="form-container">
 
-   <form action="" method="post">
+   <form action="" method="post" auto_complete="off">
       <h3>register now</h3>
       <input type="text" name="name" required placeholder="enter your username" maxlength="20"  class="box">
-      <input type="text" name="email" required placeholder="enter your email" maxlength="50"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <span><?php if(isset($name_errorMsg)) echo $name_errorMsg; ?></span>
+      <input type="email" name="email" required placeholder="enter your email" maxlength="50"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <span><?php if(isset($email_errorMsg)) echo $email_errorMsg; ?></span>
       <input type="password" name="pass" required placeholder="enter your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+      <span><?php if(isset($pass_errorMsg)) echo $pass_errorMsg; ?></span>
       <input type="password" name="cpass" required placeholder="confirm your password" maxlength="20"  class="box" oninput="this.value = this.value.replace(/\s/g, '')">
       <input type="submit" value="register now" class="btn btn_login_now" name="submit">
       <div><pre> </pre></div>
-      <a href="user_login.php" class="btn-first-time">already have an account?</a>
+      <a href="user_login.php" class="btn-first-time">already have an account?Login</a>
    </form>
 
 </section>
-
-
-
-
-
-
-
-
-
-
 
 
 

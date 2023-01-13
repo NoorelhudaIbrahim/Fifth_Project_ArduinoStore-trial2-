@@ -1,3 +1,4 @@
+
 <?php
 
 include 'components/connect.php';
@@ -9,6 +10,10 @@ if(isset($_SESSION['user_id'])){
 }else{
    $user_id = '';
 };
+
+
+
+
 
 ?>
 
@@ -68,18 +73,6 @@ if(isset($_SESSION['user_id'])){
    </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php include 'components/footer.php'; ?>
 
