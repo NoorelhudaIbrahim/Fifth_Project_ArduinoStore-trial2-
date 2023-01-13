@@ -1,6 +1,3 @@
-<<<<<<< HEAD:dashboard/index.php
-<?php include('header.php');?>
-=======
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,6 +19,9 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="assets/images/favicon.png" />
   </head>
@@ -162,7 +162,6 @@
           </li>
         </ul>
       </nav>
->>>>>>> 07b42c3aa633f76c5a2fcc6a97c1ad542776bf76:dashboard/index.html
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_navbar.html -->
